@@ -268,17 +268,22 @@ function updateActiveNav() {
 
 // Fonction pour afficher une catégorie et masquer les autres
 function showCategory(categoryId) {
+  console.log('showCategory appelé avec:', categoryId);
+
   // Masquer toutes les catégories
-  document.querySelectorAll('.category-section').forEach(section => {
-    section.classList.remove('category-visible');
-    section.classList.add('category-hidden');
+  const allSections = document.querySelectorAll('.category-section');
+  console.log('Nombre de sections trouvées:', allSections.length);
+
+  allSections.forEach(section => {
+    section.style.display = 'none';
   });
 
   // Afficher la catégorie sélectionnée
   const selectedCategory = document.getElementById(categoryId);
+  console.log('Section sélectionnée:', selectedCategory);
+
   if (selectedCategory) {
-    selectedCategory.classList.remove('category-hidden');
-    selectedCategory.classList.add('category-visible');
+    selectedCategory.style.display = 'block';
   }
 
   // Mettre à jour les boutons de navigation
