@@ -266,10 +266,39 @@ function updateActiveNav() {
   });
 }
 
+// Fonction pour afficher une catégorie et masquer les autres
+function showCategory(categoryId) {
+  console.log('showCategory appelé avec:', categoryId);
+
+  // Masquer toutes les catégories
+  const allSections = document.querySelectorAll('.category-section');
+  console.log('Nombre de sections trouvées:', allSections.length);
+
+  allSections.forEach(section => {
+    section.style.display = 'none';
+  });
+
+  // Afficher la catégorie sélectionnée
+  const selectedCategory = document.getElementById(categoryId);
+  console.log('Section sélectionnée:', selectedCategory);
+
+  if (selectedCategory) {
+    selectedCategory.style.display = 'block';
+  }
+
+  // Mettre à jour les boutons de navigation
+  document.querySelectorAll('.category-nav-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.category === categoryId) {
+      btn.classList.add('active');
+    }
+  });
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
   updateActiveNav();
-  
+
   // Ajouter les gestionnaires d'événements pour les tags de principes
   document.querySelectorAll('.principle-tag').forEach(tag => {
     tag.addEventListener('click', function(e) {
@@ -280,4 +309,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Initialiser la navigation par catégories (page cas-pratiques)
+  const categoryNavBtns = document.querySelectorAll('.category-nav-btn');
+  if (categoryNavBtns.length > 0) {
+    // Masquer toutes les catégories sauf la première au chargement
+    showCategory('quotidien');
+
+    // Ajouter les gestionnaires de clic sur les vignettes
+    categoryNavBtns.forEach(btn => {
+      console.log('Ajout event listener sur:', btn.dataset.category);
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const categoryId = this.dataset.category;
+        console.log('Clic détecté sur:', categoryId);
+        showCategory(categoryId);
+      });
+    });
+  }
 });

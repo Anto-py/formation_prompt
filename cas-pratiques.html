@@ -33,22 +33,22 @@
         <p>Des exercices concrets pour apprendre à prompter. Clique sur un principe pour voir sa définition.</p>
       </section>
 
-      <!-- Sommaire -->
+      <!-- Sommaire / Navigation des catégories -->
       <section class="content-section" style="background: rgba(18, 118, 118, 0.05);">
         <div class="container">
           <h2>📂 Catégories</h2>
-          <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <a href="#quotidien" class="retro-card" style="text-decoration: none; text-align: center;"><div style="font-size: 2rem;">🎯</div><h4>Quotidien</h4></a>
-            <a href="#apprendre" class="retro-card" style="text-decoration: none; text-align: center;"><div style="font-size: 2rem;">🧠</div><h4>Compétences</h4></a>
-            <a href="#creer" class="retro-card" style="text-decoration: none; text-align: center;"><div style="font-size: 2rem;">🎨</div><h4>Créer</h4></a>
-            <a href="#bureau" class="retro-card" style="text-decoration: none; text-align: center;"><div style="font-size: 2rem;">💼</div><h4>Bureau</h4></a>
-            <a href="#images" class="retro-card" style="text-decoration: none; text-align: center;"><div style="font-size: 2rem;">🖼️</div><h4>Images</h4></a>
+          <div class="category-nav cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+            <button class="retro-card category-nav-btn active" data-category="quotidien" onclick="showCategory('quotidien')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎯</div><h4>Quotidien</h4></button>
+            <button class="retro-card category-nav-btn" data-category="apprendre" onclick="showCategory('apprendre')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🧠</div><h4>Compétences</h4></button>
+            <button class="retro-card category-nav-btn" data-category="creer" onclick="showCategory('creer')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎨</div><h4>Créer</h4></button>
+            <button class="retro-card category-nav-btn" data-category="bureau" onclick="showCategory('bureau')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">💼</div><h4>Bureau</h4></button>
+            <button class="retro-card category-nav-btn" data-category="images" onclick="showCategory('images')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🖼️</div><h4>Images</h4></button>
           </div>
         </div>
       </section>
 
       <!-- CATÉGORIE 1: QUOTIDIEN -->
-      <section id="quotidien" class="content-section category-section">
+      <section id="quotidien" class="content-section category-section" style="display: block;">
         <div class="container">
           <div class="category-header"><span class="icon">🎯</span><h2>Résoudre des problèmes du quotidien</h2></div>
 
@@ -167,10 +167,8 @@
         </div>
       </section>
 
-      <div class="retro-separator"><span class="flourish">❀</span></div>
-
       <!-- CATÉGORIE 2: COMPÉTENCES -->
-      <section id="apprendre" class="content-section category-section">
+      <section id="apprendre" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🧠</span><h2>Développer tes compétences</h2></div>
 
@@ -287,10 +285,8 @@
         </div>
       </section>
 
-      <div class="retro-separator"><span class="flourish">✿</span></div>
-
       <!-- CATÉGORIE 3: CRÉER -->
-      <section id="creer" class="content-section category-section">
+      <section id="creer" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🎨</span><h2>Inventer et créer</h2></div>
 
@@ -407,10 +403,8 @@
         </div>
       </section>
 
-      <div class="retro-separator"><span class="flourish">❧</span></div>
-
       <!-- CATÉGORIE 4: BUREAU -->
-      <section id="bureau" class="content-section category-section">
+      <section id="bureau" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">💼</span><h2>Travaux de bureau</h2></div>
 
@@ -526,10 +520,8 @@
         </div>
       </section>
 
-      <div class="retro-separator"><span class="flourish">❀</span></div>
-
       <!-- CATÉGORIE 5: IMAGES -->
-      <section id="images" class="content-section category-section">
+      <section id="images" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🖼️</span><h2>Générer des images</h2></div>
 
