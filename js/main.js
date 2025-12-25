@@ -318,8 +318,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ajouter les gestionnaires de clic sur les vignettes
     categoryNavBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
+      console.log('Ajout event listener sur:', btn.dataset.category);
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         const categoryId = this.dataset.category;
+        console.log('Clic détecté sur:', categoryId);
         showCategory(categoryId);
       });
     });
