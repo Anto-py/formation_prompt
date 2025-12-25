@@ -266,10 +266,34 @@ function updateActiveNav() {
   });
 }
 
+// Fonction pour afficher une catégorie et masquer les autres
+function showCategory(categoryId) {
+  // Masquer toutes les catégories
+  document.querySelectorAll('.category-section').forEach(section => {
+    section.classList.remove('category-visible');
+    section.classList.add('category-hidden');
+  });
+
+  // Afficher la catégorie sélectionnée
+  const selectedCategory = document.getElementById(categoryId);
+  if (selectedCategory) {
+    selectedCategory.classList.remove('category-hidden');
+    selectedCategory.classList.add('category-visible');
+  }
+
+  // Mettre à jour les boutons de navigation
+  document.querySelectorAll('.category-nav-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.category === categoryId) {
+      btn.classList.add('active');
+    }
+  });
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
   updateActiveNav();
-  
+
   // Ajouter les gestionnaires d'événements pour les tags de principes
   document.querySelectorAll('.principle-tag').forEach(tag => {
     tag.addEventListener('click', function(e) {
@@ -280,4 +304,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Initialiser la navigation par catégories (page cas-pratiques)
+  const categoryNavBtns = document.querySelectorAll('.category-nav-btn');
+  if (categoryNavBtns.length > 0) {
+    // Masquer toutes les catégories sauf la première au chargement
+    showCategory('quotidien');
+
+    // Ajouter les gestionnaires de clic sur les vignettes
+    categoryNavBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const categoryId = this.dataset.category;
+        showCategory(categoryId);
+      });
+    });
+  }
 });
