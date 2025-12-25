@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les 10 Principes de Prompting — Formation IA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-frame">
+      <!-- Ornements Art Nouveau aux coins -->
+      <span class="corner-flourish top-left">❧</span>
+      <span class="corner-flourish top-right">❧</span>
+      <span class="corner-flourish bottom-left">❧</span>
+      <span class="corner-flourish bottom-right">❧</span>
+
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo">
+            🤖 PROMPT<span>LAB</span>
+          </a>
+          <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+          <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="principes.html" class="active">Principes</a></li>
+            <li><a href="cas-pratiques.html">Cas Pratiques</a></li>
+            <li><a href="https://anto-py.github.io/rotaconfor_interactif/" target="_blank">Kit de Survie ↗</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>📚 Les 10 <span>Principes</span> de Prompting</h1>
+        <p>
+          Les techniques essentielles pour dialoguer efficacement avec les IA génératives. 
+          Chaque principe est illustré par un cas pratique concret.
+        </p>
+      </section>
+
+      <!-- Sommaire -->
+      <section class="content-section">
+        <div class="container">
+          <h2>🗂️ Sommaire rapide</h2>
+          
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Tu veux...</th>
+                <th>Utilise...</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Améliorer ta question</td>
+                <td><a href="#affiner" class="principle-tag">🔍 Affiner questions et réponses</a></td>
+              </tr>
+              <tr>
+                <td>Clarifier tes besoins</td>
+                <td><a href="#inversees" class="principle-tag">🔄 Interactions inversées</a></td>
+              </tr>
+              <tr>
+                <td>Avoir plein d'idées</td>
+                <td><a href="#divergence" class="principle-tag">🌱 Divergence</a></td>
+              </tr>
+              <tr>
+                <td>Apprendre en s'amusant</td>
+                <td><a href="#jeu" class="principle-tag">🎮 Le jeu</a></td>
+              </tr>
+              <tr>
+                <td>Vérifier les infos</td>
+                <td><a href="#factchecking" class="principle-tag">🕵️ Fact checking</a></td>
+              </tr>
+              <tr>
+                <td>Reproduire un style</td>
+                <td><a href="#exemples" class="principle-tag">🧩 Exemples (Few-shot)</a></td>
+              </tr>
+              <tr>
+                <td>Créer des raccourcis</td>
+                <td><a href="#metalangage" class="principle-tag">🧠 Métalangage</a></td>
+              </tr>
+              <tr>
+                <td>Structurer avant de développer</td>
+                <td><a href="#squelette" class="principle-tag">🦴 Squelette de pensées</a></td>
+              </tr>
+              <tr>
+                <td>Comprendre le raisonnement</td>
+                <td><a href="#chaine" class="principle-tag">⛓️ Chaînes de pensées</a></td>
+              </tr>
+              <tr>
+                <td>Comparer des options</td>
+                <td><a href="#arbre" class="principle-tag">🌳 Arbre de pensées</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--retro-teal);">
+            💡 <strong>Pro tip :</strong> Ces principes se combinent ! Par exemple : Divergence + Arbre de pensées = brainstorming + évaluation des idées.
+          </p>
+        </div>
+      </section>
+
+      <div class="retro-separator">
+        <span class="flourish">✿</span>
+      </div>
+
+      <!-- Les 10 Principes -->
+      <section class="content-section">
+        <div class="container">
+
+          <!-- Principe 1: Affiner -->
+          <article id="affiner" class="retro-card principle-card">
+            <div class="emoji">🔍</div>
+            <h3>Affiner questions et réponses</h3>
+            
+            <div class="definition">
+              <p>Au lieu de galérer à écrire le prompt parfait du premier coup, tu demandes à l'IA de <strong>t'aider à améliorer ta propre question</strong>. C'est comme avoir un coach qui te dit : "Attends, tu veux dire quoi exactement ?"</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu obtiens des réponses plus précises</li>
+              <li>Tu apprends à mieux formuler tes demandes</li>
+              <li>Tu découvres des angles auxquels tu n'avais pas pensé</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Ajoute cette instruction à ton prompt :</p>
+              <blockquote>"Avant de répondre, suggère une version améliorée de ma question."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu veux des conseils pour ton orientation post-bac.</p>
+              <p><strong>Ton prompt initial :</strong> "Qu'est-ce que je peux faire après le bac ?"</p>
+              <p><strong>Ce que l'IA te propose :</strong></p>
+              <blockquote>"Ta question est très large. Voici une version plus précise : 'Quelles formations courtes (2-3 ans) dans le domaine du numérique sont accessibles après un bac général avec spécialité maths, pour quelqu'un qui aime créer des sites web ?'"</blockquote>
+              <p>→ Tu vois la différence ? La deuxième question va te donner des réponses 100x plus utiles.</p>
+            </div>
+          </article>
+
+          <!-- Principe 2: Interactions inversées -->
+          <article id="inversees" class="retro-card principle-card">
+            <div class="emoji">🔄</div>
+            <h3>Interactions inversées</h3>
+            
+            <div class="definition">
+              <p>Normalement, c'est toi qui poses les questions. Avec ce principe, tu <strong>inverses les rôles</strong> : c'est l'IA qui te pose des questions pour mieux comprendre ce que tu veux.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu n'as pas besoin de tout savoir à l'avance</li>
+              <li>L'IA t'aide à clarifier tes propres idées</li>
+              <li>Tu obtiens un résultat vraiment personnalisé</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Termine ton prompt par :</p>
+              <blockquote>"Pose-moi des questions une par une pour mieux comprendre mes besoins."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu veux te mettre au sport mais tu ne sais pas par où commencer.</p>
+              <p><strong>Ton prompt :</strong> "Je veux commencer le sport. Pose-moi des questions une par une pour me créer un programme adapté."</p>
+              <p><strong>L'IA te demande :</strong></p>
+              <blockquote>
+                1. "Quel est ton objectif principal : perdre du poids, te muscler, améliorer ton endurance ou juste te sentir mieux ?"<br>
+                2. "Combien de temps par semaine peux-tu y consacrer ?"<br>
+                3. "As-tu accès à une salle de sport ou tu préfères t'entraîner chez toi ?"<br>
+                4. "Y a-t-il des activités que tu détestes absolument ?"
+              </blockquote>
+              <p>→ À la fin, tu obtiens un programme qui te correspond vraiment, pas un truc générique copié-collé.</p>
+            </div>
+          </article>
+
+          <!-- Principe 3: Divergence -->
+          <article id="divergence" class="retro-card principle-card">
+            <div class="emoji">🌱</div>
+            <h3>Divergence</h3>
+            
+            <div class="definition">
+              <p>Au lieu de demander UNE solution, tu demandes à l'IA de te proposer <strong>plein d'options différentes</strong>. C'est du brainstorming boosté à l'IA.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu sors de ta zone de confort</li>
+              <li>Tu découvres des idées auxquelles tu n'aurais jamais pensé</li>
+              <li>Tu gardes le contrôle : c'est toi qui choisis à la fin</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Utilise des formules comme :</p>
+              <blockquote>"Propose-moi 10 idées très différentes pour..."<br>"Donne-moi 5 approches opposées pour..."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu dois trouver un sujet original pour ton exposé de sciences sur l'écologie.</p>
+              <p><strong>Ton prompt :</strong> "Propose-moi 8 sujets d'exposé sur l'écologie pour des lycéens. Je veux des angles vraiment différents : scientifique, économique, artistique, provocateur, local, futuriste, etc."</p>
+              <p><strong>L'IA te propose :</strong></p>
+              <blockquote>
+                1. Les champignons qui dépolluent les sols (scientifique)<br>
+                2. Combien coûte vraiment un jean ? (économique)<br>
+                3. Le street art écolo qui change les villes (artistique)<br>
+                4. Et si on arrêtait de recycler ? (provocateur)<br>
+                5. La biodiversité dans ta cour de récré (local)<br>
+                6. Manger des insectes en 2050 (futuriste)...
+              </blockquote>
+              <p>→ Tu as le choix, et tu peux même mixer plusieurs angles !</p>
+            </div>
+          </article>
+
+          <!-- Principe 4: Le jeu -->
+          <article id="jeu" class="retro-card principle-card">
+            <div class="emoji">🎮</div>
+            <h3>Le jeu</h3>
+            
+            <div class="definition">
+              <p>Tu transformes une tâche ennuyante (révisions, apprentissage...) en <strong>jeu interactif</strong> avec l'IA. Points, niveaux, défis, feedback immédiat : tout ce qui rend les jeux vidéo addictifs, appliqué à l'apprentissage.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Apprendre devient moins pénible</li>
+              <li>Tu as un feedback instantané (si tu le demandes...)</li>
+              <li>La difficulté s'adapte à ton niveau</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Demande à l'IA de créer un jeu avec des règles claires :</p>
+              <blockquote>"Crée un quiz interactif avec des points. Augmente la difficulté à chaque bonne réponse."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu dois réviser les capitales du monde pour un contrôle de géo.</p>
+              <p><strong>Ton prompt :</strong> "On va jouer ! Tu me donnes un pays, je te donne la capitale. Si j'ai bon, +1 point et tu passes à un pays plus difficile. Si j'ai faux, tu me donnes un indice et je réessaie. Objectif : atteindre 15 points. C'est parti !"</p>
+              <p><strong>L'IA joue avec toi :</strong></p>
+              <blockquote>
+                - "France ?" → "Paris !" → "✅ +1 point ! Score : 1/15"<br>
+                - "Mongolie ?" → "Euh... Pékin ?" → "❌ Indice : ça commence par 'Oulan'..." → "Oulan-Bator !" → "✅ Bien rattrapé !"
+              </blockquote>
+              <p>→ Tu révises sans t'en rendre compte, et tu retiens mieux parce que c'est fun.</p>
+            </div>
+          </article>
+
+          <!-- Principe 5: Fact checking -->
+          <article id="factchecking" class="retro-card principle-card">
+            <div class="emoji">🕵️</div>
+            <h3>Fact checking</h3>
+            
+            <div class="definition">
+              <p>Les IA peuvent inventer des trucs qui ont l'air vrais mais qui sont faux (on appelle ça des "hallucinations"). Ce principe consiste à <strong>demander à l'IA de lister les faits à vérifier</strong> dans sa réponse.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu évites de répéter des bêtises</li>
+              <li>Tu développes ton esprit critique</li>
+              <li>Tu apprends à ne pas tout gober</li>
+              <li>Cela peut pousser l'IA à moins halluciner</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Ajoute à la fin de ton prompt :</p>
+              <blockquote>"Liste les faits clés de ta réponse que je devrais vérifier pour être sûr que ta réponse est juste."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu prépares un exposé sur les réseaux sociaux et la santé mentale.</p>
+              <p><strong>Ton prompt :</strong> "Explique-moi l'impact des réseaux sociaux sur la santé mentale des ados. À la fin, liste les chiffres et études que tu cites pour que je puisse les vérifier."</p>
+              <p><strong>L'IA répond puis ajoute :</strong></p>
+              <blockquote>
+                <strong>⚠️ Faits à vérifier :</strong><br>
+                - "73% des ados..." → Vérifier la source et l'année<br>
+                - "Étude de l'université de Cambridge" → Rechercher si elle existe vraiment<br>
+                - "L'OMS recommande..." → Consulter le site officiel de l'OMS
+              </blockquote>
+              <p>→ Tu peux maintenant faire tes propres recherches sur les points importants au lieu de faire confiance aveuglément.</p>
+            </div>
+          </article>
+
+          <!-- Principe 6: Exemples -->
+          <article id="exemples" class="retro-card principle-card">
+            <div class="emoji">🧩</div>
+            <h3>Exemples (Few-shot)</h3>
+            
+            <div class="definition">
+              <p>Au lieu d'expliquer longuement ce que tu veux, tu <strong>montres des exemples</strong> à l'IA. Elle comprend le pattern et reproduit le style.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>C'est plus rapide que d'expliquer</li>
+              <li>Le résultat correspond exactement à ce que tu veux</li>
+              <li>Parfait pour copier un style ou un format</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Donne 2-3 exemples avant ta demande :</p>
+              <blockquote>"Voici des exemples de ce que je veux : [exemple 1], [exemple 2]. Maintenant fais pareil pour..."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu veux créer des flashcards de vocabulaire anglais avec des phrases mnémotechniques marrantes.</p>
+              <p><strong>Ton prompt :</strong></p>
+              <blockquote>
+                "Voici comment je veux mes flashcards :<br><br>
+                Exemple 1 :<br>
+                - Mot : <em>Awkward</em> (gênant)<br>
+                - Phrase : "C'est AWKWARD quand ton crush voit que t'as liké sa photo de 2019"<br><br>
+                Exemple 2 :<br>
+                - Mot : <em>Overwhelmed</em> (submergé)<br>
+                - Phrase : "Je suis OVERWHELMED par les 47 onglets ouverts sur mon ordi"<br><br>
+                Maintenant, crée des flashcards dans le même style pour : <em>Grateful</em>, <em>Procrastinate</em>, <em>Cringe</em>"
+              </blockquote>
+              <p>→ L'IA comprend ton style (références ados, humour) et reproduit exactement ce format.</p>
+            </div>
+          </article>
+
+          <!-- Principe 7: Métalangage -->
+          <article id="metalangage" class="retro-card principle-card">
+            <div class="emoji">🧠</div>
+            <h3>Métalangage</h3>
+            
+            <div class="definition">
+              <p>Tu crées tes propres <strong>raccourcis et commandes</strong> que l'IA va mémoriser. C'est comme programmer ton assistant personnel avec des mots-clés.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu gagnes du temps sur les tâches répétitives</li>
+              <li>L'IA comprend exactement ce que tu veux en un mot</li>
+              <li>Tu personnalises ton expérience</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Définis tes raccourcis clairement :</p>
+              <blockquote>"À partir de maintenant, quand j'écris [COMMANDE], tu dois faire [ACTION]."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu fais souvent des fiches de révision et tu en as marre de tout réexpliquer à chaque fois.</p>
+              <p><strong>Ton prompt de configuration :</strong></p>
+              <blockquote>
+                "À partir de maintenant :<br>
+                - Quand j'écris <code>FICHE(sujet)</code>, tu me fais une fiche de révision avec : définition, 3 points clés, 1 exemple, 1 piège à éviter<br>
+                - Quand j'écris <code>QUIZ(sujet)</code>, tu me poses 5 questions de difficulté croissante<br>
+                - Quand j'écris <code>EXPLAIN5(concept)</code>, tu m'expliques comme si j'avais 5 ans"
+              </blockquote>
+              <p><strong>Ensuite tu utilises :</strong></p>
+              <blockquote>
+                <code>FICHE(théorème de Pythagore)</code><br>
+                <code>QUIZ(Révolution française)</code><br>
+                <code>EXPLAIN5(l'inflation)</code>
+              </blockquote>
+              <p>→ En un mot, l'IA sait exactement ce que tu attends.</p>
+            </div>
+          </article>
+
+          <!-- Principe 8: Squelette de pensées -->
+          <article id="squelette" class="retro-card principle-card">
+            <div class="emoji">🦴</div>
+            <h3>Squelette de pensées</h3>
+            
+            <div class="definition">
+              <p>Avant de te donner une réponse détaillée, tu demandes à l'IA de <strong>poser d'abord un plan</strong> (le "squelette"). Ensuite seulement, elle développe.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>La réponse est mieux structurée</li>
+              <li>Tu peux valider le plan avant qu'elle développe</li>
+              <li>Tu gagnes en clarté</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Demande un plan en premier :</p>
+              <blockquote>"D'abord, donne-moi un plan en 5 points. Ensuite, développe chaque point."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu dois écrire une lettre de motivation pour un stage.</p>
+              <p><strong>Ton prompt :</strong> "Je dois écrire une lettre de motivation pour un stage en marketing digital. D'abord, propose-moi un plan structuré avec les parties principales. Attends ma validation avant de rédiger."</p>
+              <p><strong>L'IA propose :</strong></p>
+              <blockquote>
+                <strong>Plan proposé :</strong><br>
+                1. Accroche personnalisée (pourquoi cette entreprise)<br>
+                2. Mon parcours et mes compétences pertinentes<br>
+                3. Ce que je peux apporter au stage<br>
+                4. Ce que j'espère apprendre<br>
+                5. Conclusion et appel à l'action
+              </blockquote>
+              <p><strong>Toi :</strong> "OK mais inverse les parties 3 et 4, et ajoute une partie sur un projet perso que j'ai fait."</p>
+              <p>→ Tu co-construis la structure avant d'avoir le texte final.</p>
+            </div>
+          </article>
+
+          <!-- Principe 9: Chaînes de pensées -->
+          <article id="chaine" class="retro-card principle-card">
+            <div class="emoji">⛓️</div>
+            <h3>Chaînes de pensées</h3>
+            
+            <div class="definition">
+              <p>Tu demandes à l'IA de <strong>montrer son raisonnement étape par étape</strong> au lieu de donner directement la réponse. Comme quand un prof te demande de "montrer ton calcul".</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu comprends le "pourquoi", pas juste le résultat</li>
+              <li>Tu peux repérer si l'IA se trompe quelque part</li>
+              <li>Les réponses sont souvent meilleures</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Ajoute simplement :</p>
+              <blockquote>"Réfléchis étape par étape avant de me donner ta réponse finale."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu galères sur un problème de maths avec des pourcentages.</p>
+              <p><strong>Ton prompt :</strong> "Un article coûte 80€. Il est soldé à -30%, puis une réduction supplémentaire de -10% est appliquée sur le prix soldé. Quel est le prix final ? Montre-moi ton raisonnement étape par étape."</p>
+              <p><strong>L'IA répond :</strong></p>
+              <blockquote>
+                <strong>Étape 1 :</strong> Prix initial = 80€<br>
+                <strong>Étape 2 :</strong> Première réduction de 30% → 80 × 0,70 = 56€<br>
+                <strong>Étape 3 :</strong> Deuxième réduction de 10% sur 56€ → 56 × 0,90 = 50,40€<br>
+                <strong>Réponse finale :</strong> Le prix final est de 50,40€<br><br>
+                ⚠️ Attention au piège : on ne peut PAS additionner les pourcentages (30% + 10% ≠ 40%) !
+              </blockquote>
+              <p>→ Tu comprends la méthode et tu peux la réappliquer tout seul.</p>
+            </div>
+          </article>
+
+          <!-- Principe 10: Arbre de pensées -->
+          <article id="arbre" class="retro-card principle-card">
+            <div class="emoji">🌳</div>
+            <h3>Arbre de pensées</h3>
+            
+            <div class="definition">
+              <p>Au lieu de foncer sur une seule solution, tu demandes à l'IA d'<strong>explorer plusieurs pistes en parallèle</strong> et de les <strong>évaluer selon tes critères</strong> avant de choisir.</p>
+            </div>
+
+            <h4>Pourquoi c'est utile ?</h4>
+            <ul>
+              <li>Tu compares des options de façon objective</li>
+              <li>Tu dis à l'IA ce qui est important pour toi (les critères)</li>
+              <li>Tu évites de te précipiter sur la première idée</li>
+              <li>Tu prends de meilleures décisions</li>
+            </ul>
+
+            <div class="tip">
+              <strong>💡 Le truc à retenir :</strong>
+              <p>Demande une évaluation multicritères :</p>
+              <blockquote>"Propose 3 options différentes. Évalue chacune sur [critère 1], [critère 2], [critère 3] avec une note sur 5."</blockquote>
+            </div>
+
+            <div class="example-box">
+              <h4>🎯 Cas pratique</h4>
+              <p><strong>Situation :</strong> Tu hésites entre plusieurs idées de cadeau d'anniversaire pour ta meilleure pote.</p>
+              <p><strong>Ton prompt :</strong> "Ma meilleure amie fête ses 18 ans. Elle adore la K-pop, le dessin et les plantes. Budget : 40€ max.</p>
+              <p>Propose-moi 4 idées de cadeaux très différentes. Pour chacune, évalue sur 5 :<br>
+              - Originalité<br>
+              - Lien avec ses passions<br>
+              - Rapport qualité/prix<br>
+              - Facilité à trouver"</p>
+              <p><strong>L'IA répond avec un tableau comparatif :</strong></p>
+              <table class="recap-table" style="font-size: 0.9rem;">
+                <thead>
+                  <tr>
+                    <th>Idée</th>
+                    <th>Originalité</th>
+                    <th>Passions</th>
+                    <th>Prix</th>
+                    <th>Facilité</th>
+                    <th>TOTAL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Album collector BTS + plante</td>
+                    <td>4/5</td>
+                    <td>5/5</td>
+                    <td>3/5</td>
+                    <td>4/5</td>
+                    <td>16/20</td>
+                  </tr>
+                  <tr>
+                    <td>Kit terrarium DIY</td>
+                    <td>4/5</td>
+                    <td>3/5</td>
+                    <td>4/5</td>
+                    <td>5/5</td>
+                    <td>16/20</td>
+                  </tr>
+                  <tr>
+                    <td>Tablette à dessin</td>
+                    <td>3/5</td>
+                    <td>4/5</td>
+                    <td>2/5</td>
+                    <td>5/5</td>
+                    <td>14/20</td>
+                  </tr>
+                  <tr style="background: rgba(18, 118, 118, 0.1);">
+                    <td><strong>Cours de dessin manga en ligne</strong></td>
+                    <td>5/5</td>
+                    <td>4/5</td>
+                    <td>4/5</td>
+                    <td>5/5</td>
+                    <td><strong>18/20</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>→ Tu as une vision claire pour décider.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="content-section" style="text-align: center; background: rgba(18, 118, 118, 0.05);">
+        <div class="container">
+          <h2>🎯 Prêt·e à pratiquer ?</h2>
+          <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+            Maintenant que tu connais les principes, passe à la pratique avec nos exercices classés par thème et par niveau !
+          </p>
+          <a href="cas-pratiques.html" class="retro-btn-pill">
+            <span class="retro-btn-pill-text">Voir les cas pratiques</span>
+            <span class="retro-btn-pill-icon">»</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <p>
+          Formation IA Prompting — Conçue pour les 15-20 ans<br>
+          <a href="https://anto-py.github.io/rotaconfor_interactif/" target="_blank">Kit de survie du prompting</a> • 
+          <a href="index.html">Accueil</a> • 
+          <a href="cas-pratiques.html">Cas pratiques</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
