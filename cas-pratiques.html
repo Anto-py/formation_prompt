@@ -6,6 +6,55 @@
   <title>Cas Pratiques — Formation IA Prompting</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <style>
+    /* Styles pour les boutons de téléchargement */
+    .download-section {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(18, 118, 118, 0.08);
+      border-radius: 12px;
+      border-left: 4px solid var(--retro-teal, #127676);
+    }
+    .download-section-title {
+      font-weight: 600;
+      color: var(--retro-teal, #127676);
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .download-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--retro-teal, #127676);
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+    .download-btn:hover {
+      background: white;
+      color: var(--retro-teal, #127676);
+      border-color: var(--retro-teal, #127676);
+    }
+    .download-btn .icon {
+      font-size: 1rem;
+    }
+    .file-info {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <div class="page-wrapper">
@@ -491,6 +540,17 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <!-- SECTION TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Fichier d'exercice</div>
+              <div class="download-links">
+                <a href="files/base_clients_desorganisee.csv" download class="download-btn">
+                  <span class="icon">📊</span>
+                  <span>base_clients_desorganisee.csv</span>
+                </a>
+              </div>
+              <p class="file-info">50 entrées avec doublons, formats incohérents, données manquantes... Bonne chance !</p>
+            </div>
           </div>
 
           <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
@@ -503,6 +563,21 @@
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+            </div>
+            <!-- SECTION TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Fichiers d'exercice — SportPlus Distribution T3 2024</div>
+              <div class="download-links">
+                <a href="files/resultats_t3_2024.xlsx" download class="download-btn">
+                  <span class="icon">📊</span>
+                  <span>resultats_t3_2024.xlsx</span>
+                </a>
+                <a href="files/brief_presentation.pdf" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>brief_presentation.pdf</span>
+                </a>
+              </div>
+              <p class="file-info">Le brief de ton manager + les données Excel complètes (5 onglets). À toi de jouer, stagiaire !</p>
             </div>
           </div>
 
