@@ -54,6 +54,102 @@
       margin-top: 0.5rem;
       font-style: italic;
     }
+
+    /* Styles pour les sections dépliables */
+    .expand-section {
+      margin-top: 0.75rem;
+      border: none;
+      background: none;
+    }
+    .expand-section summary {
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      background: rgba(228, 99, 46, 0.1);
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--retro-orange, #E4632E);
+      font-size: 0.85rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .expand-section summary::-webkit-details-marker {
+      display: none;
+    }
+    .expand-section summary::before {
+      content: "▶";
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+    .expand-section[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .expand-section summary:hover {
+      background: rgba(228, 99, 46, 0.2);
+    }
+    .expand-content {
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      background: rgba(18, 118, 118, 0.03);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .expand-content ul {
+      margin: 0.5rem 0;
+      padding-left: 1.25rem;
+    }
+    .expand-content li {
+      margin-bottom: 0.4rem;
+    }
+    .expand-content strong {
+      color: var(--retro-teal, #127676);
+    }
+    .tip-box {
+      background: rgba(227, 165, 53, 0.15);
+      border-left: 3px solid var(--retro-yellow, #E3A535);
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+    }
+    .warning-box {
+      background: rgba(228, 99, 46, 0.1);
+      border-left: 3px solid var(--retro-orange, #E4632E);
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+    }
+    .example-box {
+      background: rgba(18, 118, 118, 0.08);
+      border-left: 3px solid var(--retro-teal, #127676);
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+
+    /* Styles pour la théorie images */
+    .theory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+    .theory-item {
+      background: rgba(18, 118, 118, 0.05);
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+    .theory-item strong {
+      display: block;
+      color: var(--retro-teal, #127676);
+      margin-bottom: 0.25rem;
+    }
   </style>
 </head>
 <body>
@@ -96,7 +192,9 @@
         </div>
       </section>
 
+      <!-- ============================================== -->
       <!-- CATÉGORIE 1: QUOTIDIEN -->
+      <!-- ============================================== -->
       <section id="quotidien" class="content-section category-section" style="display: block;">
         <div class="container">
           <div class="category-header"><span class="icon">🎯</span><h2>Résoudre des problèmes du quotidien</h2></div>
@@ -112,16 +210,36 @@
               <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🧩 Exemples :</strong> Donne à l'IA un exemple de CV que tu trouves bien pour qu'elle s'en inspire</li>
+                  <li><strong>🔍 Affiner :</strong> Demande à l'IA de reformuler ton prompt pour qu'il soit plus précis</li>
+                  <li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de te poser des questions pour améliorer ton CV</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Commence par "Je postule pour... j'ai ces expériences... pose-moi les questions nécessaires pour créer un CV percutant"</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
             <h4>Organiser une fête d'anniversaire</h4>
-            <div class="situation"><strong>Situation :</strong> Tu organises les 18 ans de ton meilleur pote. Budget 150€, 25 personnes, salle des jeunes. Gérer playlist, bouffe, boissons et activité surprise.</div>
+            <div class="situation"><strong>Situation :</strong> Tu organises les 18 ans de ton meilleur pote. Budget serré (150€), 25 personnes, lieu : salle des jeunes de ta commune. Tu dois gérer la playlist, la bouffe, les boissons et une activité surprise.</div>
             <p class="task">→ Écris un prompt pour obtenir un plan d'organisation complet.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Demande plusieurs idées d'activités ou de thèmes avant de choisir</li>
+                  <li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te poser des questions pour mieux cerner tes besoins (goûts musicaux du groupe, allergies alimentaires, etc.)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
@@ -134,39 +252,78 @@
               <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🎮 Le jeu :</strong> Transforme ta révision en quiz interactif avec points et niveaux de difficulté</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande à l'IA d'expliquer son raisonnement étape par étape pour chaque exercice corrigé</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> "Crée un quiz de 5 questions sur les équations du second degré, niveau progressif. Pour chaque réponse, explique le raisonnement étape par étape."</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
             <h4>Sauver une plante mourante</h4>
-            <div class="situation"><strong>Situation :</strong> La plante de ta grand-mère ne va pas bien : feuilles jaunes, terre instable. Tu ne connais même pas son nom. Tu veux la sauver.</div>
-            <p class="task">→ Écris un prompt pour diagnostiquer et établir un plan de sauvetage.</p>
+            <div class="situation"><strong>Situation :</strong> La plante que t'a offerte ta grand-mère ne va pas bien : feuilles qui jaunissent, certaines tombent, la terre est tantôt trop sèche tantôt détrempée. Tu ne sais même pas son nom exact. Tu as accès à de l'eau, du terreau et quelques pots.</div>
+            <p class="task">→ Écris un prompt pour diagnostiquer le problème et établir un plan de sauvetage.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour identifier l'espèce et diagnostiquer (emplacement, lumière, fréquence d'arrosage, type de pot, etc.)</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Obtiens un plan d'action étape par étape avec explications des besoins de la plante</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
 
           <div class="retro-card exercise-card">
             <h4>Le speech qui tue</h4>
-            <div class="situation"><strong>Situation :</strong> Tu es délégué et tu dois présenter au conseil de classe une proposition d'installer un distributeur de snacks sains. Tu veux des arguments scientifiques.</div>
+            <div class="situation"><strong>Situation :</strong> Tu es délégué et tu dois présenter au conseil de classe une proposition d'installer un distributeur de snacks sains. Le directeur est strict sur le budget. Tu veux utiliser des arguments scientifiques.</div>
             <p class="task">→ Écris un prompt pour préparer ton argumentation.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🦴 Squelette :</strong> Demande d'abord un plan structuré de ton argumentaire avant de développer</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Fais développer chaque argument avec sa logique</li>
+                  <li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres et statistiques que l'IA te propose</li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours vérifier les sources.</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
             <h4>Résoudre un conflit entre potes</h4>
-            <div class="situation"><strong>Situation :</strong> Deux amis ne se parlent plus depuis 3 semaines. Tu veux organiser une médiation sans prendre parti.</div>
+            <div class="situation"><strong>Situation :</strong> Deux de tes meilleurs amis ne se parlent plus depuis 3 semaines à cause d'une histoire de jalousie. Ça pourrit l'ambiance du groupe. Tu veux organiser une discussion pour arranger les choses sans prendre parti.</div>
             <p class="task">→ Écris un prompt pour préparer cette médiation.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
               <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour comprendre la situation et t'aider à identifier les vrais problèmes</li>
+                  <li><strong>🔍 Affiner :</strong> Améliore ta demande pour obtenir des conseils vraiment adaptés à ta situation</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
@@ -179,6 +336,34 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Demande 5-10 concepts très différents avant de choisir (cabane sur pilotis, tiny house, maison semi-enterrée...)</li>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon VOS critères d'équipe :
+                    <ul>
+                      <li>Faisabilité technique (peut-on vraiment le construire ?)</li>
+                      <li>Impact visuel (ça va impressionner ?)</li>
+                      <li>Respect du budget (sous les 20€ ?)</li>
+                      <li>Originalité vs les autres groupes</li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Demande un tableau comparatif avec une note sur 5 pour chaque critère</div>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Consignes complètes du projet</div>
+              <div class="download-links">
+                <a href="files/projet_maquette_ecologique.docx" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>projet_maquette_ecologique.docx</span>
+                </a>
+              </div>
+              <p class="file-info">Critères de notation, contraintes matérielles, planning et conseils du prof</p>
+            </div>
           </div>
 
           <div class="retro-card exercise-card">
@@ -188,6 +373,27 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+            </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse critère par critère avec raisonnement explicite</li>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs scénarios (budget serré vs confort, proximité vs prix...)</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Demande de calculer le coût RÉEL mensuel en incluant les charges cachées (transport, internet...)</div>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Les 5 offres à analyser</div>
+              <div class="download-links">
+                <a href="files/offres_logement_etudiant.docx" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>offres_logement_etudiant.docx</span>
+                </a>
+              </div>
+              <p class="file-info">5 offres détaillées avec tous les critères + tableau récapitulatif</p>
             </div>
           </div>
 
@@ -201,22 +407,43 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
             </div>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--retro-orange);">⚠️ L'IA peut inventer des statistiques !</p>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère plusieurs angles d'approche (humour, choc, comparaison, défi)</li>
+                  <li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres sur l'impact écologique</li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours croiser avec des sources fiables.</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
             <h4>Négocier une augmentation</h4>
-            <div class="situation"><strong>Situation :</strong> Job étudiant depuis 6 mois. Tu fais plus que prévu. Tu veux +1€/h mais tu ne sais pas comment aborder le sujet.</div>
+            <div class="situation"><strong>Situation :</strong> Job étudiant depuis 6 mois. Tu fais plus que prévu (gestion stocks, formation des nouveaux, remplacements). Tu veux +1€/h mais tu ne sais pas comment aborder le sujet.</div>
             <p class="task">→ Écris un prompt pour préparer ta négociation.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> Simule un jeu de rôle où l'IA joue ton patron et te pose des objections</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure ton argumentaire avec la logique derrière chaque point</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Demande à l'IA de jouer le rôle d'un patron sceptique pour t'entraîner à répondre aux objections</div>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
+      <!-- ============================================== -->
       <!-- CATÉGORIE 2: COMPÉTENCES -->
+      <!-- ============================================== -->
       <section id="apprendre" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🧠</span><h2>Développer tes compétences</h2></div>
@@ -225,31 +452,69 @@
 
           <div class="retro-card exercise-card">
             <h4>Comprendre enfin les fractions</h4>
-            <div class="situation"><strong>Situation :</strong> Tu bloques sur les fractions. 3/4 + 2/3 te fait paniquer. Tu veux comprendre la logique.</div>
+            <div class="situation"><strong>Situation :</strong> Tu bloques sur les fractions. 3/4 + 2/3 te fait paniquer. Tu veux comprendre la logique, pas juste la formule.</div>
             <p class="task">→ Écris un prompt pour une explication adaptée à toi.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape avec le "pourquoi" de chaque étape</li>
+                  <li><strong>🎮 Le jeu :</strong> Transforme l'apprentissage en défi progressif avec des pizzas ou des gâteaux à partager</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
             <h4>Lancer une conversation avec un inconnu</h4>
-            <div class="situation"><strong>Situation :</strong> Journée d'intégration demain. Tu ne connais personne et tu stresses.</div>
+            <div class="situation"><strong>Situation :</strong> Journée d'intégration demain dans ta nouvelle école. Tu ne connais personne et tu stresses à l'idée de rester seul.</div>
             <p class="task">→ Écris un prompt pour apprendre à briser la glace.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te questionner sur ton style (timide/extraverti), tes centres d'intérêt, ce qui te met mal à l'aise</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Demande des techniques adaptées à ton profil, pas des conseils génériques</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
 
           <div class="retro-card exercise-card">
             <h4>Mémoriser du vocabulaire</h4>
-            <div class="situation"><strong>Situation :</strong> 20 mots de néerlandais à apprendre. Lire en boucle ne fonctionne pas.</div>
+            <div class="situation"><strong>Situation :</strong> 20 mots de néerlandais à apprendre pour vendredi. Lire en boucle ne fonctionne pas. Tu préfères jouer.</div>
             <p class="task">→ Écris un prompt pour un quiz dont tu inventes les règles.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
+            </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🎮 Le jeu :</strong> Crée un quiz avec TES propres règles : points, vies, niveaux, défis...</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Essaie "Quiz avec 3 vies, je perds une vie à chaque erreur, bonus x2 si je réponds en moins de 5 secondes"</div>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Liste de vocabulaire</div>
+              <div class="download-links">
+                <a href="files/vocabulaire_neerlandais_bureau.docx" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>vocabulaire_neerlandais_bureau.docx</span>
+                </a>
+              </div>
+              <p class="file-info">20 mots thème "Le bureau" + astuces mémo + quiz rapide</p>
             </div>
           </div>
 
@@ -261,6 +526,15 @@
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication progressive du simple au complexe</li>
+                  <li><strong>🦴 Squelette :</strong> Fais d'abord lister les concepts clés avant de les développer</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
@@ -273,6 +547,27 @@
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse progressive : d'abord le contexte, puis le vocabulaire difficile, puis le sens</li>
+                  <li><strong>🔍 Affiner :</strong> Laisse l'IA reformuler ta question pour cibler exactement ce que tu ne comprends pas</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> "Ne me donne pas la réponse, guide-moi vers la compréhension"</div>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Texte à analyser</div>
+              <div class="download-links">
+                <a href="files/texte_rabelais_gargantua.docx" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>texte_rabelais_gargantua.docx</span>
+                </a>
+              </div>
+              <p class="file-info">Extrait de Gargantua + glossaire + questions d'analyse + contexte historique</p>
+            </div>
           </div>
 
           <div class="retro-card exercise-card">
@@ -284,6 +579,16 @@
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
               <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de l'opposant et te challenge avec des objections de plus en plus pointues</li>
+                  <li><strong>🌳 Arbre de pensées :</strong> Pour chaque argument, évalue sa force selon plusieurs critères (solidité logique, impact émotionnel, difficulté à contrer)</li>
+                  <li><strong>🕵️ Fact checking :</strong> Vérifie les statistiques et exemples que tu utilises</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
@@ -296,6 +601,15 @@
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🧩 Exemples :</strong> Donne les 5 exercices du prof comme exemples pour que l'IA génère des exercices similaires</li>
+                  <li><strong>🌱 Divergence :</strong> Demande des variations : même concept, contextes différents</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -306,6 +620,16 @@
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication étape par étape de la méthode Feynman</li>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de "l'enfant de 10 ans" à qui tu dois expliquer, et te pose des questions naïves</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Méthode Feynman :</strong> 1) Choisis un concept 2) Explique-le simplement 3) Identifie les lacunes 4) Simplifie encore</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
@@ -319,6 +643,16 @@
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> Simule l'oral : l'IA te pose les questions du jury</li>
+                  <li><strong>🧩 Exemples :</strong> Donne un exemple de présentation réussie que tu as vue pour t'en inspirer</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure ton discours avec une logique claire (accroche → développement → conclusion)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -330,11 +664,23 @@
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs stratégies de révision selon tes critères (efficacité, réalisme, variété)</li>
+                  <li><strong>🦴 Squelette :</strong> Demande d'abord un plan global avant les détails jour par jour</li>
+                  <li><strong>🌱 Divergence :</strong> Génère plusieurs versions du planning avant de choisir</li>
+                </ul>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
+      <!-- ============================================== -->
       <!-- CATÉGORIE 3: CRÉER -->
+      <!-- ============================================== -->
       <section id="creer" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🎨</span><h2>Inventer et créer</h2></div>
@@ -343,11 +689,19 @@
 
           <div class="retro-card exercise-card">
             <h4>Nom de groupe de musique</h4>
-            <div class="situation"><strong>Situation :</strong> Rock alternatif + rap. Vous voulez un nom original.</div>
+            <div class="situation"><strong>Situation :</strong> Rock alternatif + rap. Vous voulez un nom original qui sonne bien et qui a du sens.</div>
             <p class="task">→ Écris un prompt pour des idées de noms.</p>
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Demande 20 noms très différents classés par style (mystérieux, provocant, poétique, etc.)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -358,6 +712,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère plusieurs styles possibles avant de choisir</li>
+                  <li><strong>🧩 Exemples :</strong> Montre une photo d'un style que tu aimes pour que l'IA s'en inspire</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
@@ -370,6 +733,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère 5 concepts de mécaniques de jeu très différentes</li>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour affiner ton concept (nombre de joueurs, durée, niveau de complexité)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -380,6 +752,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Demande plusieurs "arcs narratifs" possibles pour ta playlist</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Fais expliquer la logique de progression (BPM, énergie, ambiance)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
@@ -392,6 +773,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère 5 concepts visuels très différents</li>
+                  <li><strong>🧩 Exemples :</strong> Donne des exemples de logos que tu aimes pour définir un style</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -403,6 +793,16 @@
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de t'aider à préciser ton projet</li>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque énigme selon faisabilité, lien pédagogique, difficulté</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure la progression narrative des énigmes</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
@@ -415,6 +815,16 @@
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur ton personnage, l'ambiance, les enjeux</li>
+                  <li><strong>🌱 Divergence :</strong> Demande 3 directions possibles à chaque moment clé de l'histoire, puis choisis</li>
+                </ul>
+                <div class="tip-box">💡 <strong>Astuce :</strong> "Propose-moi 3 directions différentes pour la suite, je choisirai"</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -425,6 +835,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère 10 concepts de challenges très différents</li>
+                  <li><strong>🕵️ Fact checking :</strong> Vérifie que ton concept n'existe pas déjà (l'IA peut inventer !)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
@@ -437,6 +856,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère 15 angles originaux classés par type (humour, expertise, format, personnage...)</li>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon tes critères (faisabilité avec ton matériel, originalité, potentiel d'audience...)</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -448,11 +876,23 @@
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌳 Arbre de pensées :</strong> Compare plusieurs modèles économiques possibles</li>
+                  <li><strong>🦴 Squelette :</strong> Structure ton pitch avant de le développer</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Développe chaque partie avec sa logique argumentative</li>
+                </ul>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
+      <!-- ============================================== -->
       <!-- CATÉGORIE 4: BUREAU -->
+      <!-- ============================================== -->
       <section id="bureau" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">💼</span><h2>Travaux de bureau</h2></div>
@@ -466,6 +906,14 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🧩 Exemples :</strong> Donne un exemple de mail professionnel que tu trouves bien pour que l'IA s'en inspire</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -475,6 +923,14 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🧩 Exemples :</strong> Montre des exemples de signatures que tu trouves bien</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
@@ -487,6 +943,27 @@
               <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
               <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque tâche selon plusieurs critères (urgence réelle, temps estimé, impact si non fait, possibilité de déléguer)</li>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour clarifier les vrais deadlines et dépendances entre tâches</li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Dans le monde pro, "urgent" ne veut pas toujours dire "important". Comment apprendre à dire non poliment ?</div>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
+            <div class="download-section">
+              <div class="download-section-title">📁 Les 8 tâches à prioriser</div>
+              <div class="download-links">
+                <a href="files/taches_a_prioriser.docx" download class="download-btn">
+                  <span class="icon">📄</span>
+                  <span>taches_a_prioriser.docx</span>
+                </a>
+              </div>
+              <p class="file-info">8 tâches détaillées avec temps, deadlines, dépendances + récapitulatif</p>
+            </div>
           </div>
 
           <div class="retro-card exercise-card">
@@ -498,6 +975,17 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="metalangage">🧠 Métalangage</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur tes tâches pour faire ressortir les détails que tu aurais oubliés</li>
+                  <li><strong>🌱 Divergence :</strong> Génère plusieurs formats possibles (checklist, guide étape par étape, FAQ, mix) avant de choisir</li>
+                  <li><strong>🧠 Métalangage :</strong> Crée un système de codes pour hiérarchiser l'info (URGENT, QUOTIDIEN, HEBDO, ASTUCE)</li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Tu documentes ton travail pour aider ton remplaçant... mais aussi pour prouver ta valeur !</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
@@ -509,6 +997,14 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape pour chaque formule</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -519,6 +1015,15 @@
               <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🌱 Divergence :</strong> Génère plusieurs types de questions avant de sélectionner</li>
+                  <li><strong>🧩 Exemples :</strong> Donne des exemples de bonnes questions de satisfaction</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
@@ -531,6 +1036,15 @@
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🦴 Squelette :</strong> Définis d'abord la structure du compte-rendu</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Organise les informations par thème/décision</li>
+                </ul>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -540,7 +1054,15 @@
             <div class="principles"><span class="principles-title">💡 Principes :</span><br>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
-            <!-- SECTION TÉLÉCHARGEMENT -->
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une méthodologie étape par étape</li>
+                </ul>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
             <div class="download-section">
               <div class="download-section-title">📁 Fichier d'exercice</div>
               <div class="download-links">
@@ -564,7 +1086,17 @@
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
               <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
             </div>
-            <!-- SECTION TÉLÉCHARGEMENT -->
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🦴 Squelette :</strong> Structure d'abord les messages clés par slide</li>
+                  <li><strong>🧩 Exemples :</strong> Montre un exemple de présentation qui t'a marqué</li>
+                  <li><strong>⛓️ Chaînes de pensées :</strong> Développe le storytelling avec une logique narrative</li>
+                </ul>
+              </div>
+            </details>
+            <!-- TÉLÉCHARGEMENT -->
             <div class="download-section">
               <div class="download-section-title">📁 Fichiers d'exercice — SportPlus Distribution T3 2024</div>
               <div class="download-links">
@@ -577,7 +1109,7 @@
                   <span>brief_presentation.pdf</span>
                 </a>
               </div>
-              <p class="file-info">Le brief de ton manager + les données Excel complètes (5 onglets). À toi de jouer, stagiaire !</p>
+              <p class="file-info">Le brief de ton manager + les données Excel complètes (5 onglets). À toi de jouer !</p>
             </div>
           </div>
 
@@ -591,11 +1123,30 @@
               <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
               <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
             </div>
+            <details class="expand-section">
+              <summary>📖 Comment utiliser ces principes ?</summary>
+              <div class="expand-content">
+                <ul>
+                  <li><strong>🧠 Métalangage :</strong> Crée des codes pour tes modules (INTRO-FORM, INTRO-RELAX, CORPS-RELANCE-01, CONCLU-URGENTE...)</li>
+                  <li><strong>🌱 Divergence :</strong> Génère 5-6 variantes pour chaque type de bloc avec tonalités différentes</li>
+                  <li><strong>🦴 Squelette :</strong> Définis d'abord l'architecture complète avant de rédiger</li>
+                  <li><strong>🧩 Exemples :</strong> Donne 2-3 mails que tu as déjà envoyés pour que l'IA comprenne le ton</li>
+                </ul>
+                <div class="example-box">
+                  <strong>Exemple d'assemblage :</strong><br>
+                  SITUATION: Relancer un client<br>
+                  → INTRO-RELAX + CORPS-RELANCE-02 + CONCLU-DISPO
+                </div>
+                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Comment garder une personnalisation sincère tout en utilisant des templates ?</div>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
+      <!-- ============================================== -->
       <!-- CATÉGORIE 5: IMAGES -->
+      <!-- ============================================== -->
       <section id="images" class="content-section category-section" style="display: none;">
         <div class="container">
           <div class="category-header"><span class="icon">🖼️</span><h2>Générer des images</h2></div>
@@ -608,6 +1159,18 @@
             <p class="task">→ Écris un prompt en décrivant : Sujet + Style + Couleurs</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Sujet principal, style visuel (manga, cartoon, pixel art...), palette de couleurs</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Les bases du prompt image</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Sujet principal</strong>Décris précisément ce que tu veux voir (personnage, vêtements, accessoires)</div>
+                  <div class="theory-item"><strong>Style visuel</strong>Manga, cartoon, pixel art, réaliste, aquarelle...</div>
+                  <div class="theory-item"><strong>Palette de couleurs</strong>Indique les couleurs dominantes souhaitées</div>
+                </div>
+                <div class="tip-box">💡 <strong>Formule de base :</strong> Sujet + Style + Couleurs</div>
+                <div class="example-box">"Portrait d'un adolescent avec des écouteurs et un sweat à capuche noir, style anime japonais, palette de couleurs néon violet et bleu"</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -616,6 +1179,18 @@
             <p class="task">→ Écris un prompt en spécifiant format (9:16) et ambiance.</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Format (portrait, paysage, carré), ambiance (festif, mystérieux...), éléments clés</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Format et ambiance</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Format</strong>Portrait, paysage, carré. Précise les proportions : 9:16 pour story, 1:1 pour post</div>
+                  <div class="theory-item"><strong>Ambiance</strong>Les adjectifs qui décrivent l'atmosphère (festif, mystérieux, chaleureux...)</div>
+                  <div class="theory-item"><strong>Éléments clés</strong>Ce qui doit absolument apparaître dans l'image</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Pense à laisser de l'espace vide pour ajouter du texte ensuite !</div>
+                <div class="example-box">"Affiche verticale 9:16, ciel nocturne étoilé au-dessus d'une fête en plein air, ambiance magique et festive, espace vide en haut pour du texte, style illustration moderne"</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-2">⭐⭐ Niveau 2 — Cadrage et composition</span></h3>
@@ -626,6 +1201,20 @@
             <p class="task">→ Écris un prompt en travaillant le cadrage (gros plan, plan moyen, plan large) et l'angle de vue.</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Types de plans (gros plan = intimité, plan large = solitude), angle de vue (plongée, contre-plongée)</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Cadrage et composition</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Gros plan</strong>Visage, objet en détail → intimité</div>
+                  <div class="theory-item"><strong>Plan moyen</strong>Personnage à mi-corps</div>
+                  <div class="theory-item"><strong>Plan large</strong>Environnement complet, personnage petit → solitude, immensité</div>
+                  <div class="theory-item"><strong>Plongée</strong>Vu d'en haut → écrase le sujet</div>
+                  <div class="theory-item"><strong>Contre-plongée</strong>Vu d'en bas → grandit le sujet</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Le cadrage raconte une histoire. Un gros plan = intimité. Un plan large = solitude ou immensité.</div>
+                <div class="example-box">"Plan moyen d'une adolescente de dos face à une fenêtre, vue trois-quarts, chambre éclairée par des néons roses, ville nocturne visible à travers la vitre, style lo-fi anime"</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -634,6 +1223,20 @@
             <p class="task">→ Écris un prompt en décrivant les 3 plans (premier plan, second plan, arrière-plan).</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Règle des tiers, profondeur de champ (3 plans), point focal</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Profondeur et règle des tiers</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Règle des tiers</strong>Place les éléments importants sur les lignes de force (1/3 ou 2/3 de l'image)</div>
+                  <div class="theory-item"><strong>Premier plan</strong>Ce qui est devant, proche</div>
+                  <div class="theory-item"><strong>Second plan</strong>Le sujet principal</div>
+                  <div class="theory-item"><strong>Arrière-plan</strong>Le fond, le décor lointain</div>
+                  <div class="theory-item"><strong>Point focal</strong>Où l'œil doit se poser en premier</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Décris les 3 plans séparément pour une image plus riche.</div>
+                <div class="example-box">"Paysage de collines verdoyantes, premier plan : fleurs sauvages et barrière en bois, second plan : maison de hobbit avec porte ronde verte, arrière-plan : collines douces et ciel matinal, style aquarelle de livre d'illustrations"</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3 — Lumière et ambiance</span></h3>
@@ -644,6 +1247,21 @@
             <p class="task">→ Écris un prompt en travaillant spécifiquement la lumière.</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Direction (frontale, latérale, contre-jour, Rembrandt), qualité (dure, douce), température (chaude, froide)</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : La lumière crée l'émotion</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Lumière frontale</strong>Éclairage plat, peu de relief</div>
+                  <div class="theory-item"><strong>Lumière latérale</strong>Crée des ombres, du volume, du mystère</div>
+                  <div class="theory-item"><strong>Contre-jour</strong>Sujet sombre sur fond lumineux, silhouette</div>
+                  <div class="theory-item"><strong>Éclairage Rembrandt</strong>Triangle de lumière sur la joue dans l'ombre</div>
+                  <div class="theory-item"><strong>Lumière dure</strong>Ombres nettes, contraste fort (soleil direct)</div>
+                  <div class="theory-item"><strong>Lumière douce</strong>Ombres diffuses, transitions douces (ciel couvert)</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Lumière chaude (orange/jaune) = réconfort. Lumière froide (bleu/vert) = tension ou mélancolie.</div>
+                <div class="example-box">"Portrait trois-quarts d'un jeune homme pensif, éclairage latéral Rembrandt, lumière chaude dorée de golden hour, ombres douces, arrière-plan flou, style photographique cinématique"</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -652,6 +1270,19 @@
             <p class="task">→ Écris deux prompts avec ambiances lumineuses opposées mais mêmes éléments.</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Golden hour, blue hour, midi, nuit, sources lumineuses nocturnes</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Les moments de la journée</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Golden hour</strong>Lumière dorée, ombres longues (lever/coucher de soleil)</div>
+                  <div class="theory-item"><strong>Blue hour</strong>Lumière bleue douce (juste avant le lever ou après le coucher)</div>
+                  <div class="theory-item"><strong>Midi</strong>Lumière dure, ombres courtes</div>
+                  <div class="theory-item"><strong>Nuit</strong>Sources artificielles : lampadaires, néons, lune, étoiles, fenêtres éclairées</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Utilise les mêmes éléments de composition, change uniquement la lumière.</div>
+                <div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Compare les deux images générées. L'IA a-t-elle gardé exactement les mêmes éléments ? Qu'est-ce qui change au-delà de la lumière ?</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4 — Styles artistiques</span></h3>
@@ -663,6 +1294,22 @@
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Mouvements artistiques, médiums (huile, aquarelle, digital...)<br>
               <span style="color: var(--retro-orange);">⚠️ Évite de citer des artistes vivants (droits d'auteur)</span></div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Styles et mouvements artistiques</summary>
+              <div class="expand-content">
+                <div class="theory-grid">
+                  <div class="theory-item"><strong>Impressionnisme</strong>Touches visibles, lumière naturelle, atmosphère</div>
+                  <div class="theory-item"><strong>Art nouveau</strong>Lignes courbes, motifs organiques, décoratif</div>
+                  <div class="theory-item"><strong>Pop art</strong>Couleurs vives, aplats, style BD</div>
+                  <div class="theory-item"><strong>Ukiyo-e</strong>Aplats, lignes nettes, perspective particulière</div>
+                  <div class="theory-item"><strong>Cyberpunk</strong>Néons, technologie, atmosphère dystopique</div>
+                  <div class="theory-item"><strong>Studio Ghibli</strong>Douceur, détails du quotidien, lumière chaleureuse</div>
+                </div>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Nomme le mouvement ET décris ses caractéristiques pour plus de précision.</div>
+                <div class="example-box">"Chambre d'adolescent style impressionniste, touches de pinceau visibles, lumière du matin filtrant par la fenêtre, palette pastel, ambiance Monet"</div>
+                <div class="warning-box">⚠️ <strong>Éthique :</strong> Évite de citer des artistes vivants — questions de droits d'auteur.</div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -671,6 +1318,22 @@
             <p class="task">→ Crée un "guide de style" (personnage, objet, palette fixes) puis écris tes 5 prompts.</p>
             <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
               Guide de style constant, éléments variables (décor, lumière, action)</div>
+            <details class="expand-section">
+              <summary>📖 Théorie : Créer une série cohérente</summary>
+              <div class="expand-content">
+                <p><strong>Guide de style à définir AVANT :</strong></p>
+                <ul>
+                  <li>Description fixe du personnage (vêtements, couleur de cheveux, accessoire distinctif)</li>
+                  <li>Description fixe de l'objet mystérieux</li>
+                  <li>Style artistique constant</li>
+                  <li>Palette de couleurs récurrente</li>
+                </ul>
+                <p><strong>Éléments variables :</strong> décor, lumière, action, cadrage</p>
+                <div class="tip-box">💡 <strong>Astuce :</strong> Crée un "bloc de texte" constant que tu copies dans chaque prompt, puis ajoute les variations.</div>
+                <div class="example-box"><strong>Structure :</strong> [BLOC CONSTANT : personnage + objet + style] + [VARIABLE : lieu + action + lumière]</div>
+                <div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Malgré tes efforts, le personnage change-t-il d'une image à l'autre ? C'est une limite actuelle des IA génératives.</div>
+              </div>
+            </details>
           </div>
 
           <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5 — Maîtrise et regard critique</span></h3>
@@ -681,6 +1344,25 @@
             <p class="task">→ Génère d'abord avec un prompt "neutre", analyse les biais, puis réécris pour une vraie diversité.</p>
             <div class="principles"><span class="principles-title">🔍 Analyse critique :</span><br>
               Quels biais par défaut ? Pourquoi ? Quelle est ta responsabilité comme utilisateur ?</div>
+            <details class="expand-section">
+              <summary>📖 Exercice critique : Détecter les biais</summary>
+              <div class="expand-content">
+                <p><strong>Protocole :</strong></p>
+                <ol>
+                  <li>Génère les images avec un prompt "neutre" (ex: "portrait d'un adolescent confiant, éclairage cinématique")</li>
+                  <li>Observe : Quelles caractéristiques physiques reviennent par défaut ?</li>
+                  <li>Documente les biais observés (origine, genre, corpulence, validisme...)</li>
+                  <li>Réécris tes prompts pour obtenir une vraie diversité</li>
+                </ol>
+                <div class="warning-box">🤔 <strong>Questions à te poser :</strong>
+                  <ul>
+                    <li>Pourquoi l'IA produit-elle ces biais par défaut ?</li>
+                    <li>Comment les données d'entraînement influencent-elles les résultats ?</li>
+                    <li>Quelle est ta responsabilité en tant qu'utilisateur ?</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </div>
 
           <div class="retro-card exercise-card">
@@ -690,6 +1372,38 @@
             <div class="principles"><span class="principles-title">🎨 Ton document doit inclure :</span><br>
               Palette (5-7 couleurs), style, personnage détaillé, univers, 3 prompts avec composition + lumière<br>
               <span style="color: var(--retro-orange);">🌍 Réflexion : combien de générations as-tu faites ? Impact écologique ?</span></div>
+            <details class="expand-section">
+              <summary>📖 Structure d'une direction artistique</summary>
+              <div class="expand-content">
+                <p><strong>1. Identité visuelle</strong></p>
+                <ul>
+                  <li>Palette de couleurs (5-7 couleurs max avec leurs codes ou descriptions)</li>
+                  <li>Style artistique de référence</li>
+                  <li>Ambiance générale (mots-clés)</li>
+                </ul>
+                <p><strong>2. Personnage principal</strong></p>
+                <ul>
+                  <li>Description physique détaillée et fixe</li>
+                  <li>Silhouette reconnaissable</li>
+                  <li>Accessoire ou élément distinctif</li>
+                </ul>
+                <p><strong>3. Univers</strong></p>
+                <ul>
+                  <li>Époque et lieu</li>
+                  <li>Éléments récurrents du décor</li>
+                  <li>Sources de lumière caractéristiques</li>
+                </ul>
+                <p><strong>4. Tes 3 prompts</strong></p>
+                <p>Chacun doit inclure : composition (plan, angle), lumière (direction, qualité, température), et tous les éléments de ton guide de style.</p>
+                <div class="warning-box">🌍 <strong>Réflexion écologique :</strong> Combien de générations as-tu faites pour obtenir tes 3 images finales ?
+                  <ul>
+                    <li>Était-ce nécessaire ou aurais-tu pu être plus précis dès le départ ?</li>
+                    <li>Quel est l'impact écologique de ces générations multiples ?</li>
+                    <li>Comment optimiser ton processus créatif ?</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -737,5 +1451,161 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    // Définitions enrichies des principes pour la modale
+    const principlesData = {
+      exemples: {
+        title: "🧩 Exemples (Few-shot)",
+        content: `<p><strong>Principe :</strong> Donner des exemples à l'IA pour qu'elle comprenne exactement ce que tu attends.</p>
+          <p><strong>Pourquoi ça marche :</strong> L'IA apprend mieux par l'exemple que par des consignes abstraites.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>Donne 2-3 exemples de ce que tu veux</li>
+            <li>Montre le format attendu</li>
+            <li>Illustre le ton souhaité</li>
+          </ul>
+          <p><strong>Exemple :</strong> "Voici un CV que je trouve bien : [exemple]. Crée-moi un CV similaire pour..."</p>`
+      },
+      affiner: {
+        title: "🔍 Affiner questions et réponses",
+        content: `<p><strong>Principe :</strong> Demander à l'IA de t'aider à améliorer ta propre demande.</p>
+          <p><strong>Pourquoi ça marche :</strong> L'IA peut identifier ce qui manque dans ta question pour mieux y répondre.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Reformule ma question pour qu'elle soit plus précise"</li>
+            <li>"Qu'est-ce qui manque dans ma demande ?"</li>
+            <li>"Pose-moi les questions nécessaires avant de répondre"</li>
+          </ul>`
+      },
+      inversees: {
+        title: "🔄 Interactions inversées",
+        content: `<p><strong>Principe :</strong> Inverser les rôles : c'est l'IA qui te pose des questions.</p>
+          <p><strong>Pourquoi ça marche :</strong> Tu ne sais pas toujours ce que tu ne sais pas. L'IA peut t'aider à explorer.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Pose-moi 5 questions pour mieux comprendre mon besoin"</li>
+            <li>"Joue le rôle d'un recruteur et interview-moi"</li>
+            <li>"Questionne-moi comme un coach pour m'aider à clarifier mon objectif"</li>
+          </ul>`
+      },
+      divergence: {
+        title: "🌱 Divergence",
+        content: `<p><strong>Principe :</strong> Demander plusieurs options très différentes avant de choisir.</p>
+          <p><strong>Pourquoi ça marche :</strong> La première idée n'est pas toujours la meilleure. Explorer élargit les possibilités.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Donne-moi 10 idées très différentes pour..."</li>
+            <li>"Propose 5 approches opposées"</li>
+            <li>"Classe les idées par style : sérieux, humoristique, provocant..."</li>
+          </ul>`
+      },
+      jeu: {
+        title: "🎮 Le jeu",
+        content: `<p><strong>Principe :</strong> Transformer l'apprentissage ou la tâche en jeu.</p>
+          <p><strong>Pourquoi ça marche :</strong> Le jeu engage, motive et rend l'apprentissage plus efficace.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Transforme ça en quiz avec des points"</li>
+            <li>"Crée un jeu avec des niveaux de difficulté"</li>
+            <li>"Invente des règles : 3 vies, bonus, défis..."</li>
+          </ul>`
+      },
+      chaine: {
+        title: "⛓️ Chaînes de pensées (Chain of Thought)",
+        content: `<p><strong>Principe :</strong> Demander à l'IA d'expliquer son raisonnement étape par étape.</p>
+          <p><strong>Pourquoi ça marche :</strong> Forcer l'explication améliore la qualité du résultat et aide à apprendre.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Explique ton raisonnement étape par étape"</li>
+            <li>"Montre-moi comment tu arrives à cette conclusion"</li>
+            <li>"Décompose le problème avant de le résoudre"</li>
+          </ul>`
+      },
+      squelette: {
+        title: "🦴 Squelette de pensées",
+        content: `<p><strong>Principe :</strong> Demander d'abord une structure, puis développer.</p>
+          <p><strong>Pourquoi ça marche :</strong> Avoir une vue d'ensemble avant les détails évite de se perdre.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"D'abord, donne-moi un plan en 5 points"</li>
+            <li>"Liste les grandes parties avant de développer"</li>
+            <li>"Montre-moi la structure, on remplira ensuite"</li>
+          </ul>`
+      },
+      arbre: {
+        title: "🌳 Arbre de pensées (Tree of Thoughts)",
+        content: `<p><strong>Principe :</strong> Explorer plusieurs chemins et évaluer chacun selon des critères.</p>
+          <p><strong>Pourquoi ça marche :</strong> Permet de comparer objectivement des options complexes.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Propose 3 approches et évalue chacune sur : faisabilité, coût, originalité"</li>
+            <li>"Compare ces options dans un tableau avec des notes sur 5"</li>
+            <li>"Pour chaque chemin, liste les avantages et inconvénients"</li>
+          </ul>`
+      },
+      factchecking: {
+        title: "🕵️ Fact checking",
+        content: `<p><strong>Principe :</strong> Vérifier les informations que l'IA te donne.</p>
+          <p><strong>Pourquoi c'est crucial :</strong> L'IA peut inventer des faits, des chiffres, des sources ("hallucinations").</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Donne-moi les sources de ces informations"</li>
+            <li>"Es-tu sûr de ce chiffre ? Comment le vérifier ?"</li>
+            <li>Toujours croiser avec des sources fiables</li>
+          </ul>
+          <p style="color: var(--retro-orange);"><strong>⚠️ Règle d'or :</strong> Ne jamais faire confiance aveuglément aux statistiques de l'IA !</p>`
+      },
+      metalangage: {
+        title: "🧠 Métalangage",
+        content: `<p><strong>Principe :</strong> Créer un système de codes ou de conventions pour structurer les échanges.</p>
+          <p><strong>Pourquoi ça marche :</strong> Permet d'être plus efficace et de créer des systèmes réutilisables.</p>
+          <p><strong>Comment l'utiliser :</strong></p>
+          <ul>
+            <li>"Utilise ces codes : [URGENT], [ASTUCE], [À VÉRIFIER]..."</li>
+            <li>"Crée un système de tags pour organiser l'information"</li>
+            <li>"Définis des raccourcis qu'on utilisera dans la conversation"</li>
+          </ul>`
+      }
+    };
+
+    // Gestion de la modale des principes
+    document.querySelectorAll('.principle-tag').forEach(tag => {
+      tag.addEventListener('click', function() {
+        const principle = this.dataset.principle;
+        const data = principlesData[principle];
+        if (data) {
+          document.getElementById('modal-title').textContent = data.title;
+          document.getElementById('modal-body').innerHTML = data.content;
+          document.getElementById('principle-modal').classList.add('active');
+        }
+      });
+    });
+
+    function closeModal() {
+      document.getElementById('principle-modal').classList.remove('active');
+    }
+
+    document.getElementById('principle-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Gestion des catégories
+    function showCategory(categoryId) {
+      document.querySelectorAll('.category-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(categoryId).style.display = 'block';
+      
+      document.querySelectorAll('.category-nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-category="${categoryId}"]`).classList.add('active');
+    }
+
+    // Navigation mobile
+    function toggleNav() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
