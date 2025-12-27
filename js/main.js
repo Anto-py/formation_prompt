@@ -210,22 +210,27 @@ function openPrincipleModal(principleId) {
 
 // Fonction pour fermer la modal
 function closeModal() {
-  const modal = document.getElementById('principle-modal');
-  modal.classList.remove('active');
+  // Toujours restaurer le scroll en premier
   document.body.style.overflow = '';
+
+  const modal = document.getElementById('principle-modal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
 }
 
 // Fermer la modal en cliquant à l'extérieur
 document.addEventListener('click', function(e) {
   const modal = document.getElementById('principle-modal');
-  if (e.target === modal) {
+  if (modal && e.target === modal) {
     closeModal();
   }
 });
 
 // Fermer la modal avec Escape
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+  const modal = document.getElementById('principle-modal');
+  if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
     closeModal();
   }
 });
