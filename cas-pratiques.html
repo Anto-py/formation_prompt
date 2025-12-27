@@ -1577,16 +1577,26 @@
           document.getElementById('modal-title').textContent = data.title;
           document.getElementById('modal-body').innerHTML = data.content;
           document.getElementById('principle-modal').classList.add('active');
+          document.body.style.overflow = 'hidden';
         }
       });
     });
 
     function closeModal() {
+      document.body.style.overflow = '';
       document.getElementById('principle-modal').classList.remove('active');
     }
 
     document.getElementById('principle-modal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
+    });
+
+    // Fermer la modal avec Escape
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('principle-modal');
+      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeModal();
+      }
     });
 
     // Gestion des catégories
