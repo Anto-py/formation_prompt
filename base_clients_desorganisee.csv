@@ -1,0 +1,51 @@
+Nom,Prénom,Adresse,Code Postal,Ville,Téléphone,Email,Statut,Région,CA 2024,Dernière commande
+MARTIN,Jean,12 rue des Lilas,75015,Paris,06 12 34 56 78,j.martin@email.fr,Actif,Île-de-France,12500€,15/03/2024
+Dupont,Marie,45 avenue Victor Hugo,,Lyon,0678901234,marie.dupont@mail.com,actif,Rhône-Alpes,8900,12/01/2024
+MARTIN,Jean,12 rue des Lilas,75015,Paris,06.12.34.56.78,j.martin@email.fr,Actif,IDF,12 500 €,15/03/2024
+Bernard,Sophie,8 Boulevard de la République,13001,Marseille,,s.bernard@email.fr,Inactif,PACA,5600€,23/08/2023
+Petit,Luc,33 Impasse du Moulin,44000,Nantes,02 40 12 34 56,l.petit@company.fr,Actif,Pays de la Loire,18750,2024-04-10
+LEFEBVRE,Anne,78 rue Nationale,,Lille,+33 3 20 45 67 89,anne.lefebvre@email.com,Actif,Hauts-de-France,9200€,18/02/2024
+Moreau,Thomas,15 place de la Mairie,67000,Strasbourg,0388776655,t.moreau@mail.fr,actif,Grand Est,14300,05/03/2024
+LAURENT,Claire,52 route de Lyon,69100,Villeurbanne,,,Inactif,Rhône-Alpes,3400€,15/11/2023
+Dupont,Marie,45 av Victor Hugo,69000,Lyon,06 78 90 12 34,marie.dupont@mail.com,Actif,Rhône-Alpes,8900€,12/01/2024
+Simon,Paul,91 rue du Commerce,33000,Bordeaux,05.56.78.90.12,p.simon@email.fr,Actif,Nouvelle-Aquitaine,11200,28/03/2024
+MICHEL,Julie,7 allée des Cerisiers,31000,Toulouse,,j.michel@company.com,Inactif,Occitanie,6800€,02/09/2023
+Leroy,Antoine,25 boulevard Haussmann,75008,Paris,0145678901,a.leroy@mail.fr,Actif,Île-de-France,22100€,20/04/2024
+Garnier,Isabelle,14 rue Saint-Jean,,Bordeaux,+33556123456,i.garnier@email.com,actif,Nouvelle-Aquitaine,7300,2024-02-14
+ROUX,François,38 avenue Foch,06000,Nice,0493887766,f.roux@mail.fr,Actif,PACA,15900€,11/03/2024
+Blanc,Émilie,5 impasse des Roses,44100,Nantes,,e.blanc@company.fr,Inactif,Pays de la Loire,4200€,18/10/2023
+FOURNIER,Marc,61 rue de la Paix,75002,Paris,06 23 45 67 89,m.fournier@email.fr,Actif,IDF,19800,2024-04-05
+Girard,Céline,12 place Bellecour,69002,Lyon,0478901234,c.girard@mail.com,Actif,Rhône-Alpes,10500€,25/02/2024
+BONNET,Nicolas,47 boulevard Victor Hugo,,Marseille,+33 4 91 12 34 56,n.bonnet@email.fr,actif,PACA,8100,17/03/2024
+Mercier,Valérie,29 rue des Écoles,35000,Rennes,02.99.88.77.66,v.mercier@company.com,Actif,Bretagne,12300€,08/04/2024
+VINCENT,Olivier,83 avenue Jean Jaurès,59000,Lille,,o.vincent@mail.fr,Inactif,Hauts-de-France,5900€,29/07/2023
+Rousseau,Sandrine,19 rue du Marché,67000,Strasbourg,03 88 66 55 44,s.rousseau@email.com,Actif,Grand Est,13700,22/03/2024
+MOREL,David,55 allée des Platanes,31000,Toulouse,0561778899,d.morel@mail.fr,Actif,Occitanie,16200€,2024-04-12
+Andre,Nathalie,8 boulevard de Strasbourg,,Nantes,+33240556677,n.andre@company.fr,actif,Pays de la Loire,9400,15/02/2024
+LEFEVRE,Patrick,72 rue de Rivoli,75001,Paris,0142345678,p.lefevre@email.fr,Actif,Île-de-France,21500€,19/04/2024
+Muller,Stéphanie,31 place Kléber,67000,Strasbourg,,s.muller@mail.com,Inactif,Grand Est,4800€,12/08/2023
+BERNARD,Sophie,8 Bd de la République,13001,Marseille,0491234567,s.bernard@email.fr,Inactif,PACA,5600,23/08/2023
+Robert,Christophe,44 avenue de la Gare,69003,Lyon,04 78 12 34 56,c.robert@company.com,Actif,Rhône-Alpes,11900€,27/03/2024
+RICHARD,Agnès,16 rue des Augustins,33000,Bordeaux,05.56.23.45.67,a.richard@email.fr,Actif,Nouvelle-Aquitaine,14600,2024-04-08
+Petit,Luc,33 Impasse du Moulin,44000,Nantes,02-40-12-34-56,l.petit@company.fr,Actif,Pays de la Loire,18750€,10/04/2024
+Durand,Sylvie,67 boulevard Carnot,21000,Dijon,,s.durand@mail.fr,actif,Bourgogne-Franche-Comté,7800,20/01/2024
+LAMBERT,Thierry,22 rue Victor Hugo,06000,Nice,+33493667788,t.lambert@email.com,Actif,PACA,17300€,16/03/2024
+Fontaine,Caroline,9 allée des Acacias,35000,Rennes,02 99 11 22 33,c.fontaine@company.fr,Actif,Bretagne,10800,24/02/2024
+CHEVALIER,Bruno,51 avenue Foch,,Marseille,0491556677,b.chevalier@mail.fr,Inactif,PACA,6200€,05/09/2023
+Gauthier,Monique,13 place de la Comédie,34000,Montpellier,04.67.88.99.00,m.gauthier@email.com,Actif,Occitanie,12700,2024-03-30
+PERRIN,Alain,86 rue Nationale,59000,Lille,,a.perrin@company.fr,actif,Hauts-de-France,8500€,13/03/2024
+Robin,Fabienne,27 boulevard des Belges,69006,Lyon,0478334455,f.robin@mail.com,Actif,Rhône-Alpes,15400,21/04/2024
+CLEMENT,Georges,40 avenue Marceau,75008,Paris,06 34 56 78 90,g.clement@email.fr,Actif,IDF,23800€,2024-04-15
+Barbier,Hélène,3 impasse du Lac,,Annecy,+33450998877,h.barbier@company.com,Inactif,Auvergne-Rhône-Alpes,5100,22/06/2023
+RENARD,Éric,58 rue de la Liberté,21000,Dijon,03 80 66 55 44,e.renard@mail.fr,Actif,Bourgogne-Franche-Comté,9900€,26/02/2024
+Giraud,Martine,11 place Stanislas,54000,Nancy,0383223344,m.giraud@email.com,actif,Grand Est,11200,18/03/2024
+DENIS,Frédéric,76 avenue de la République,93100,Montreuil,,f.denis@company.fr,Actif,Île-de-France,13500€,2024-04-11
+Marchand,Brigitte,20 rue Saint-Michel,31000,Toulouse,05 61 88 99 00,b.marchand@mail.fr,Actif,Occitanie,14900,09/04/2024
+MARTIN,Jean,12 rue des Lilas,75015,Paris,0612345678,j.martin@email.fr,Actif,Île-de-France,12500,15/03/2024
+Francois,Jacqueline,35 boulevard Clemenceau,35000,Rennes,02.99.55.66.77,j.francois@email.com,Inactif,Bretagne,4600€,14/07/2023
+LEROUX,Serge,49 allée des Chênes,,Strasbourg,+33388445566,s.leroux@company.com,actif,Grand Est,10300,28/02/2024
+Hubert,Danielle,6 rue du Commerce,13002,Marseille,04 91 77 88 99,d.hubert@mail.fr,Actif,PACA,16700€,2024-03-25
+COLIN,Philippe,92 avenue Jean Médecin,06000,Nice,0493112233,p.colin@email.com,Actif,PACA,18200,12/04/2024
+Fernandez,Christine,17 place de l'Hôtel de Ville,69001,Lyon,,c.fernandez@company.fr,Inactif,Rhône-Alpes,5300€,31/08/2023
+GARCIA,Raymond,64 rue de la Gare,33000,Bordeaux,05.56.99.88.77,r.garcia@mail.com,Actif,Nouvelle-Aquitaine,12100€,19/03/2024
+Boyer,Josette,23 boulevard Raspail,75006,Paris,06 45 67 89 01,j.boyer@email.fr,actif,IDF,20400,2024-04-16
