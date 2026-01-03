@@ -593,6 +593,42 @@ p {
   font-weight: 600;
 }
 
+/* Image dans les cartes d'exercice */
+.exercise-card .exercise-image {
+  margin: var(--space-sm) 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--retro-teal);
+  box-shadow: 0 4px 12px rgba(13, 22, 23, 0.15);
+}
+
+.exercise-card .exercise-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.exercise-card .exercise-image figcaption {
+  background: var(--retro-teal);
+  color: var(--retro-paper);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.85rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.exercise-card .exercise-image a {
+  display: block;
+  text-decoration: none;
+}
+
+.exercise-card .exercise-image a:hover img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
 /* ==========================================================================
    PRINCIPES DE PROMPTING
    ========================================================================== */
