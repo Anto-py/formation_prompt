@@ -1,12 +1,13 @@
 E<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cas Pratiques — Formation IA Prompting</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cas Pratiques — Formation IA Prompting</title>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🎯&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<style>
     /* Styles pour les boutons de téléchargement */
     .download-section {
       margin-top: 1rem;
@@ -153,1341 +154,1253 @@ E<!DOCTYPE html>
   </style>
 </head>
 <body>
-  <div class="page-wrapper">
-    <div class="page-frame">
-      <span class="corner-flourish top-left">❧</span>
-      <span class="corner-flourish top-right">❧</span>
-      <span class="corner-flourish bottom-left">❧</span>
-      <span class="corner-flourish bottom-right">❧</span>
-
-      <nav class="main-nav">
-        <div class="nav-container">
-          <a href="index.html" class="nav-logo">🤖 PROMPT<span>LAB</span></a>
-          <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
-          <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="principes.html">Principes</a></li>
-            <li><a href="cas-pratiques.html" class="active">Cas Pratiques</a></li>
-            <li><a href="kit-de-survie.html">Kit de Survie</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <section class="hero">
-        <h1>🎯 Cas <span>Pratiques</span></h1>
-        <p>Des exercices concrets pour apprendre à prompter. Clique sur un principe pour voir sa définition.</p>
-      </section>
-
-      <!-- Sommaire / Navigation des catégories -->
-      <section class="content-section" style="background: rgba(18, 118, 118, 0.05);">
-        <div class="container">
-          <h2>📂 Catégories</h2>
-          <div class="category-nav cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <button class="retro-card category-nav-btn active" data-category="quotidien" onclick="showCategory('quotidien')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎯</div><h4>Quotidien</h4></button>
-            <button class="retro-card category-nav-btn" data-category="apprendre" onclick="showCategory('apprendre')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🧠</div><h4>Compétences</h4></button>
-            <button class="retro-card category-nav-btn" data-category="creer" onclick="showCategory('creer')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎨</div><h4>Créer</h4></button>
-            <button class="retro-card category-nav-btn" data-category="bureau" onclick="showCategory('bureau')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">💼</div><h4>Bureau</h4></button>
-            <button class="retro-card category-nav-btn" data-category="images" onclick="showCategory('images')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🖼️</div><h4>Images</h4></button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- CATÉGORIE 1: QUOTIDIEN -->
-      <!-- ============================================== -->
-      <section id="quotidien" class="content-section category-section" style="display: block;">
-        <div class="container">
-          <div class="category-header"><span class="icon">🎯</span><h2>Résoudre des problèmes du quotidien</h2></div>
-
-          <h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
-          
-          <div class="retro-card exercise-card">
-            <h4>Le CV qui cartonne</h4>
-            <div class="situation"><strong>Situation :</strong> Tu postules pour un job d'été dans un magasin de sport. Tu as fait du basket pendant 5 ans et tu es délégué de classe.</div>
-            <p class="task">→ Écris un prompt pour que l'IA t'aide à rédiger un CV.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-              <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🧩 Exemples :</strong> Donne à l'IA un exemple de CV que tu trouves bien pour qu'elle s'en inspire</li>
-                  <li><strong>🔍 Affiner :</strong> Demande à l'IA de reformuler ton prompt pour qu'il soit plus précis</li>
-                  <li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de te poser des questions pour améliorer ton CV</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Commence par "Je postule pour... j'ai ces expériences... pose-moi les questions nécessaires pour créer un CV percutant"</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Organiser une fête d'anniversaire</h4>
-            <div class="situation"><strong>Situation :</strong> Tu organises les 18 ans de ton meilleur pote. Budget serré (150€), 25 personnes, lieu : salle des jeunes de ta commune. Tu dois gérer la playlist, la bouffe, les boissons et une activité surprise.</div>
-            <p class="task">→ Écris un prompt pour obtenir un plan d'organisation complet.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Demande plusieurs idées d'activités ou de thèmes avant de choisir</li>
-                  <li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te poser des questions pour mieux cerner tes besoins (goûts musicaux du groupe, allergies alimentaires, etc.)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Révision express</h4>
-            <div class="situation"><strong>Situation :</strong> Contrôle de Géographie demain sur les capitales et les fleuves d'Europe.Tu en as marre d'essayer de bloquer ça par coeur.</div>
-            <p class="task">→ Écris un prompt pour que l'IA te crée des exercices d'entraînement.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🎮 Le jeu :</strong> Transforme ta révision en quiz interactif avec points et niveaux de difficulté</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Réfléchis au type de questions, au règles de progression, au type de commentaires de tes réponses que tu veux que l'IA te donne,... </div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Sauver une plante mourante</h4>
-            <div class="situation"><strong>Situation :</strong> La plante que t'a offerte ta grand-mère il y a 2 mois ne va pas bien : feuilles qui jaunissent, certaines tombent, la terre est tantôt trop sèche tantôt détrempée.Tu as fait une photo des feuilles de cette pauvre plante. Tu ne sais même pas son nom exact ("un truc vert avec des feuilles"). Tu veux la sauver mais tu ne connais rien aux plantes. Tu as accès à de l'eau, du terreau et quelques pots.</div>
-            <p class="task">→ Écris un prompt pour diagnostiquer le problème et établir un plan de sauvetage.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour identifier l'espèce et diagnostiquer (emplacement, lumière, fréquence d'arrosage, type de pot, etc.)</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Obtiens un plan d'action étape par étape avec explications des besoins de la plante</li>
-                </ul>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📷 Photo de la plante à analyser</div>
-              <div class="download-links">
-                <a href="images/plante-mourante.png" download class="download-btn">
-                  <span class="icon">🌱</span>
-                  <span>plante-mourante.png</span>
-                </a>
-              </div>
-              <p class="file-info">Photo de la plante avec feuilles abîmées présentant des taches brunes</p>
-            </div>
-          </div>
-
-          <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Le speech qui tue</h4>
-            <div class="situation"><strong>Situation :</strong> Tu es délégué et tu dois présenter au conseil de classe une proposition d'installer un distributeur de snacks sains (Ou un autre projet ;)). Le directeur est strict sur le budget. Tu veux utiliser des arguments scientifiques pour convaincre le directeur.</div>
-            <p class="task">→ Écris un prompt pour préparer ton argumentation.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🦴 Squelette :</strong> Demande d'abord un plan structuré de ton argumentaire avant de développer</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Fais développer chaque argument avec sa logique</li>
-                  <li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres et statistiques que l'IA te propose</li>
-                </ul>
-                <div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours vérifier les sources.</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Résoudre un conflit entre potes</h4>
-            <div class="situation"><strong>Situation :</strong> Deux de tes meilleurs amis ne se parlent plus depuis 3 semaines à cause d'une histoire de jalousie. Ça pourrit l'ambiance du groupe. Tu veux organiser une discussion pour arranger les choses sans prendre parti.</div>
-            <p class="task">→ Écris un prompt pour préparer cette médiation.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour comprendre la situation et t'aider à identifier les vrais problèmes</li>
-                  <li><strong>🔍 Affiner :</strong> Améliore ta demande pour obtenir des conseils vraiment adaptés à ta situation</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Projet : La maquette écologique</h4>
-            <div class="situation"><strong>Situation :</strong> tu es en cours de sciences et technologies avec 3 autres élèves. Votre prof vous demande de créer une maquette de maison écologique à l'échelle 1:50 (environ 30-40cm de côté), tu as les consignes à disposition.</div>
-            <p class="task">→ Écris un prompt pour obtenir des concepts respectant toutes les contraintes.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Demande 5-10 concepts très différents avant de choisir (cabane sur pilotis, tiny house, maison semi-enterrée...)</li>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon VOS critères d'équipe :
+<div class="page-wrapper">
+<div class="page-frame">
+<span class="corner-flourish top-left">❧</span>
+<span class="corner-flourish top-right">❧</span>
+<span class="corner-flourish bottom-left">❧</span>
+<span class="corner-flourish bottom-right">❧</span>
+<nav class="main-nav">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">🤖 PROMPT<span>LAB</span></a>
+<button aria-label="Menu" class="nav-toggle" onclick="toggleNav()">☰</button>
+<ul class="nav-links">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="principes.html">Principes</a></li>
+<li><a class="active" href="cas-pratiques.html">Cas Pratiques</a></li>
+<li><a href="kit-de-survie.html">Kit de Survie</a></li>
+</ul>
+</div>
+</nav>
+<section class="hero">
+<h1>🎯 Cas <span>Pratiques</span></h1>
+<p>Des exercices concrets pour apprendre à prompter. Clique sur un principe pour voir sa définition.</p>
+</section>
+<!-- Sommaire / Navigation des catégories -->
+<section class="content-section" style="background: rgba(18, 118, 118, 0.05);">
+<div class="container">
+<h2>📂 Catégories</h2>
+<div class="category-nav cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+<button class="retro-card category-nav-btn active" data-category="quotidien" onclick="showCategory('quotidien')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎯</div><h4>Quotidien</h4></button>
+<button class="retro-card category-nav-btn" data-category="apprendre" onclick="showCategory('apprendre')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🧠</div><h4>Compétences</h4></button>
+<button class="retro-card category-nav-btn" data-category="creer" onclick="showCategory('creer')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🎨</div><h4>Créer</h4></button>
+<button class="retro-card category-nav-btn" data-category="bureau" onclick="showCategory('bureau')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">💼</div><h4>Bureau</h4></button>
+<button class="retro-card category-nav-btn" data-category="images" onclick="showCategory('images')" style="text-align: center; cursor: pointer;"><div style="font-size: 2rem;">🖼️</div><h4>Images</h4></button>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- CATÉGORIE 1: QUOTIDIEN -->
+<!-- ============================================== -->
+<section class="content-section category-section" id="quotidien" style="display: block;">
+<div class="container">
+<div class="category-header"><span class="icon">🎯</span><h2>Résoudre des problèmes du quotidien</h2></div>
+<h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
+<div class="retro-card exercise-card">
+<h4>Le CV qui cartonne</h4>
+<div class="situation"><strong>Situation :</strong> Tu postules pour un job d'été dans un magasin de sport. Tu as fait du basket pendant 5 ans et tu es délégué de classe.</div>
+<p class="task">→ Écris un prompt pour que l'IA t'aide à rédiger un CV.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+<span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🧩 Exemples :</strong> Donne à l'IA un exemple de CV que tu trouves bien pour qu'elle s'en inspire</li>
+<li><strong>🔍 Affiner :</strong> Demande à l'IA de reformuler ton prompt pour qu'il soit plus précis</li>
+<li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de te poser des questions pour améliorer ton CV</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Commence par "Je postule pour... j'ai ces expériences... pose-moi les questions nécessaires pour créer un CV percutant"</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Organiser une fête d'anniversaire</h4>
+<div class="situation"><strong>Situation :</strong> Tu organises les 18 ans de ton meilleur pote. Budget serré (150€), 25 personnes, lieu : salle des jeunes de ta commune. Tu dois gérer la playlist, la bouffe, les boissons et une activité surprise.</div>
+<p class="task">→ Écris un prompt pour obtenir un plan d'organisation complet.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Demande plusieurs idées d'activités ou de thèmes avant de choisir</li>
+<li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te poser des questions pour mieux cerner tes besoins (goûts musicaux du groupe, allergies alimentaires, etc.)</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
+<div class="retro-card exercise-card">
+<h4>Révision express</h4>
+<div class="situation"><strong>Situation :</strong> Contrôle de Géographie demain sur les capitales et les fleuves d'Europe.Tu en as marre d'essayer de bloquer ça par coeur.</div>
+<p class="task">→ Écris un prompt pour que l'IA te crée des exercices d'entraînement.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🎮 Le jeu :</strong> Transforme ta révision en quiz interactif avec points et niveaux de difficulté</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Réfléchis au type de questions, au règles de progression, au type de commentaires de tes réponses que tu veux que l'IA te donne,... </div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Sauver une plante mourante</h4>
+<div class="situation"><strong>Situation :</strong> La plante que t'a offerte ta grand-mère il y a 2 mois ne va pas bien : feuilles qui jaunissent, certaines tombent, la terre est tantôt trop sèche tantôt détrempée.Tu as fait une photo des feuilles de cette pauvre plante. Tu ne sais même pas son nom exact ("un truc vert avec des feuilles"). Tu veux la sauver mais tu ne connais rien aux plantes. Tu as accès à de l'eau, du terreau et quelques pots.</div>
+<p class="task">→ Écris un prompt pour diagnostiquer le problème et établir un plan de sauvetage.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour identifier l'espèce et diagnostiquer (emplacement, lumière, fréquence d'arrosage, type de pot, etc.)</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Obtiens un plan d'action étape par étape avec explications des besoins de la plante</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📷 Photo de la plante à analyser</div>
+<div class="download-links">
+<a class="download-btn" download="" href="images/plante-mourante.png">
+<span class="icon">🌱</span>
+<span>plante-mourante.png</span>
+</a>
+</div>
+<p class="file-info">Photo de la plante avec feuilles abîmées présentant des taches brunes</p>
+</div>
+</div>
+<h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
+<div class="retro-card exercise-card">
+<h4>Le speech qui tue</h4>
+<div class="situation"><strong>Situation :</strong> Tu es délégué et tu dois présenter au conseil de classe une proposition d'installer un distributeur de snacks sains (Ou un autre projet ;)). Le directeur est strict sur le budget. Tu veux utiliser des arguments scientifiques pour convaincre le directeur.</div>
+<p class="task">→ Écris un prompt pour préparer ton argumentation.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🦴 Squelette :</strong> Demande d'abord un plan structuré de ton argumentaire avant de développer</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Fais développer chaque argument avec sa logique</li>
+<li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres et statistiques que l'IA te propose</li>
+</ul>
+<div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours vérifier les sources.</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Résoudre un conflit entre potes</h4>
+<div class="situation"><strong>Situation :</strong> Deux de tes meilleurs amis ne se parlent plus depuis 3 semaines à cause d'une histoire de jalousie. Ça pourrit l'ambiance du groupe. Tu veux organiser une discussion pour arranger les choses sans prendre parti.</div>
+<p class="task">→ Écris un prompt pour préparer cette médiation.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour comprendre la situation et t'aider à identifier les vrais problèmes</li>
+<li><strong>🔍 Affiner :</strong> Améliore ta demande pour obtenir des conseils vraiment adaptés à ta situation</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
+<div class="retro-card exercise-card">
+<h4>Projet : La maquette écologique</h4>
+<div class="situation"><strong>Situation :</strong> tu es en cours de sciences et technologies avec 3 autres élèves. Votre prof vous demande de créer une maquette de maison écologique à l'échelle 1:50 (environ 30-40cm de côté), tu as les consignes à disposition.</div>
+<p class="task">→ Écris un prompt pour obtenir des concepts respectant toutes les contraintes.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Demande 5-10 concepts très différents avant de choisir (cabane sur pilotis, tiny house, maison semi-enterrée...)</li>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon VOS critères d'équipe :
                     <ul>
-                      <li>Faisabilité technique (peut-on vraiment le construire ?)</li>
-                      <li>Impact visuel (ça va impressionner ?)</li>
-                      <li>Respect du budget (sous les 20€ ?)</li>
-                      <li>Originalité vs les autres groupes</li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Demande un tableau comparatif avec une note sur 5 pour chaque critère</div>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Consignes complètes du projet</div>
-              <div class="download-links">
-                <a href="files/projet_maquette_ecologique.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>projet_maquette_ecologique.docx</span>
-                </a>
-              </div>
-              <p class="file-info">Critères de notation, contraintes matérielles, planning et conseils du prof</p>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Comparer des offres de logement</h4>
-            <div class="situation"><strong>Situation :</strong> Tu cherches un kot pour l'année prochaine. Tu as 5 options avec des prix, distances, équipements différents. Certains incluent les charges, d'autres non. Tu veux comparer objectivement pour faire le meilleur choix selon tes critères (budget 400€ max, proche transports, wifi inclus).</div>
-            <p class="task">→ Écris un prompt pour analyser et comparer objectivement.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse critère par critère avec raisonnement explicite</li>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs scénarios (budget serré vs confort, proximité vs prix...)</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Demande de calculer le coût RÉEL mensuel en incluant les charges cachées (transport, internet...)</div>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Les 5 offres à analyser</div>
-              <div class="download-links">
-                <a href="files/offres_logement_etudiant.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>offres_logement_etudiant.docx</span>
-                </a>
-              </div>
-              <p class="file-info">5 offres détaillées avec tous les critères + tableau récapitulatif</p>
-            </div>
-          </div>
-
-          <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Le post viral</h4>
-            <div class="situation"><strong>Situation :</strong> Tu veux créer un post Instagram pour sensibiliser tes folowers à l'impact écologique du streaming vidéo. Percutant, pas moralisateur, avec des chiffres qui marquent.</div>
-            <p class="task">→ Écris un prompt pour obtenir du contenu adapté.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère plusieurs angles d'approche (humour, choc, comparaison, défi)</li>
-                  <li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres sur l'impact écologique</li>
-                </ul>
-                <div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours croiser avec des sources fiables.</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Négocier une augmentation</h4>
-            <div class="situation"><strong>Situation :</strong> Tu travailles comme étudiant dans un café depuis 6 mois. Tu fais plus que ce qui était prévu (gestion stocks, formation des nouveaux, remplacements en urgence). Tu veux demander une augmentation de 1€/h mais tu ne sais pas comment aborder le sujet avec ton patron.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> Simule un jeu de rôle où l'IA joue ton patron et te pose des objections</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure ton argumentaire avec la logique derrière chaque point</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Demande à l'IA de jouer le rôle d'un patron sceptique pour t'entraîner à répondre aux objections</div>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- CATÉGORIE 2: COMPÉTENCES -->
-      <!-- ============================================== -->
-      <section id="apprendre" class="content-section category-section" style="display: none;">
-        <div class="container">
-          <div class="category-header"><span class="icon">🧠</span><h2>Développer tes compétences</h2></div>
-
-          <h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Comprendre enfin les fractions</h4>
-            <div class="situation"><strong>Situation :</strong> Tu bloques sur les fractions. Quand tu vois 3/4 + 2/3, tu paniques. Tu as besoin de comprendre la logique, pas juste la formule.</div>
-            <p class="task">→ Écris un prompt pour une explication adaptée à toi.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape avec le "pourquoi" de chaque étape</li>
-                  <li><strong>🎮 Le jeu :</strong> Transforme l'apprentissage en défi progressif mais aussi des exemples concrets de la vie de tous les jours ( Par exemple avec des pizzas ou des gâteaux à partager)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Lancer une conversation avec un inconnu</h4>
-            <div class="situation"><strong>Situation :</strong> Demain, journée d'intégration dans ta nouvelle école/classe. Tu ne connais personne et tu stresses à l'idée de rester seul dans ton coin. Tu veux apprendre quelques techniques pour briser la glace naturellement sans avoir l'air désespéré.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te questionner sur ton style (timide/extraverti), tes centres d'intérêt, ce qui te met mal à l'aise</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Demande des techniques adaptées à ton profil, pas des conseils génériques</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Mémoriser du vocabulaire</h4>
-            <div class="situation"><strong>Situation :</strong> Tu as 20 mots de vocabulaire en néerlandais à apprendre pour vendredi. Lire en boucle ne fonctionne pas. Tu préfères jouer.</div>
-            <p class="task">→ Écris un prompt pour un quiz dont tu inventes les règles.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🎮 Le jeu :</strong> Crée un quiz avec TES propres règles : points, vies, niveaux, défis...</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Essaie "Quiz avec 3 vies, je perds une vie à chaque erreur, bonus x2 si je réponds en moins de 5 secondes"</div>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Liste de vocabulaire</div>
-              <div class="download-links">
-                <a href="files/vocabulaire_neerlandais_bureau.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>vocabulaire_neerlandais_bureau.docx</span>
-                </a>
-              </div>
-              <p class="file-info">20 mots thème "Le bureau" + astuces mémo + quiz rapide</p>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Comprendre la photosynthèse</h4>
-            <div class="situation"><strong>Situation :</strong> En biologie, vous étudiez la photosynthèse. Tu comprends que "les plantes fabriquent leur nourriture" mais tous les détails sur ATP, chlorophylle, cycle de Calvin te perdent complètement. En plus, le remplçant qui vous donne cours a tendance à croire que vous êtes des étudiants de haute école en bio chimie! Tu trouve la synthèse qu'il vous a donnée trop compliquée et tu n'y comprends rien! Tu dois pouvoir expliquer la photosynthèse au prochain contrôle.</div>
-            <p class="task">→ Écris un prompt pour une explication progressive.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication progressive du simple au complexe</li>
-                  <li><strong>🦴 Squelette :</strong> Fais d'abord lister les concepts clés avant de les développer</li>
-                </ul>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 La photosynthèse </div>
-              <div class="download-links">
-                <a href="files/cours_photosynthese.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>cours_photosynthese.docx</span>
-                </a>
-              </div>
-              <p class="file-info">20 mots thème "Le bureau" + astuces mémo + quiz rapide</p>
-            </div>
-          </div>
-
-          <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Décrypter un texte de Rabelais</h4>
-            <div class="situation"><strong>Situation :</strong> Voici un extrait de Rabelais (en français du 16ème siècle). Tu ne comprends rien. Résumé et message de l'auteur à expliquer pour ton cours de français. Tu comprends mieux avec une histoire moderne d'abord.</div>
-            <p class="task">→ Écris un prompt pour décoder sans que l'IA fasse le travail à ta place.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse progressive : d'abord le contexte, puis le vocabulaire difficile, puis le sens</li>
-                  <li><strong>🔍 Affiner :</strong> Laisse l'IA reformuler ta question pour cibler exactement ce que tu ne comprends pas</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> "Ne me donne pas la réponse, guide-moi vers la compréhension"</div>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Texte à analyser</div>
-              <div class="download-links">
-                <a href="files/texte_rabelais_gargantua.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>texte_rabelais_gargantua.docx</span>
-                </a>
-              </div>
-              <p class="file-info">Extrait de Gargantua + glossaire + questions d'analyse + contexte historique</p>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>S'entraîner à débattre</h4>
-            <div class="situation"><strong>Situation :</strong> En cours, tu dois participer à un débat sur un sujet polémique : "Faut-il interdire les smartphones au lycée ?" (Ou un autre thème ;)). Tu as ton opinion mais dès que quelqu'un te contredit, tu bloques. Tu veux apprendre à structurer tes arguments, anticiper les objections et répondre sans t'énerver.</div>
-            <p class="task">→ Écris un prompt pour t'entraîner à argumenter solidement.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-              <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de l'opposant et te challenge avec des objections de plus en plus pointues</li>
-                  <li><strong>🌳 Arbre de pensées :</strong> Pour chaque argument, évalue sa force selon plusieurs critères (solidité logique, impact émotionnel, difficulté à contrer)</li>
-                  <li><strong>🕵️ Fact checking :</strong> Vérifie les statistiques et exemples que tu utilises</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Créer ses exercices de chimie</h4>
-            <div class="situation"><strong>Situation :</strong> Test sur les liaisons chimiques (Ou un autre thème... Mais qqch de difficile!) la semaine prochaine. Le prof a donné 5 exercices types. Tu veux 10 exercices supplémentaires du même niveau avec corrections détaillées.</div>
-            <p class="task">→ Écris un prompt pour générer des exercices similaires.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🧩 Exemples :</strong> Donne les 5 exercices du prof comme exemples pour que l'IA génère des exercices similaires</li>
-                  <li><strong>🌱 Divergence :</strong> Demande des variations : même concept, contextes différents</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Appliquer la méthode Feynman</h4>
-            <div class="situation"><strong>Situation :</strong>Tu as entendu parler de la méthode Feynman pour vraiment comprendre (pas juste mémoriser). Tu veux l'appliquer pour réviser ton chapitre d'économie sur l'offre et la demande, mais tu ne sais pas exactement comment procéder étape par étape.</div>
-            <p class="task">→ Demande à l'IA de t'expliquer la méthode Feynman puis demande lui de l'utiliser avec toi</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication étape par étape de la méthode Feynman</li>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de "l'enfant de 10 ans" à qui tu dois expliquer, et te pose des questions naïves</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Méthode Feynman :</strong> 1) Choisis un concept 2) Explique-le simplement 3) Identifie les lacunes 4) Simplifie encore</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Préparer un oral avec feedback</h4>
-            <div class="situation"><strong>Situation :</strong> Tu dois présenter ton stage devant la classe (5 min). Tu stresses et tu te perds dans tes idées. Tu veux un discours structuré ET des conseils pour gérer ton stress.</div>
-            <p class="task">→ Écris un prompt pour préparer et améliorer ta prestation.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> Simule l'oral : l'IA te pose les questions du jury</li>
-                  <li><strong>🧩 Exemples :</strong> Donne un exemple de présentation réussie que tu as vue pour t'en inspirer</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure ton discours avec une logique claire (accroche → développement → conclusion)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Créer son planning de révision</h4>
-            <div class="situation"><strong>Situation :</strong> Tu as 3 semaines avant les examens finaux. 7 matières à réviser, certaines plus importantes que d'autres. Tu connais tes points forts/faibles par matière. Tu veux créer un planning de révision réaliste qui optimise ton temps et respecte ta capacité de concentration (max 4h d'étude intense par jour).</div>
-            <p class="task">→ Écris un prompt pour un planning personnalisé (Qui tient compte de tes impératifs) avec des objectifs quotidiens.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs stratégies de révision selon tes critères (efficacité, réalisme, variété)</li>
-                  <li><strong>🦴 Squelette :</strong> Demande d'abord un plan global avant les détails jour par jour</li>
-                  <li><strong>🌱 Divergence :</strong> Génère plusieurs versions du planning avant de choisir</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- CATÉGORIE 3: CRÉER -->
-      <!-- ============================================== -->
-      <section id="creer" class="content-section category-section" style="display: none;">
-        <div class="container">
-          <div class="category-header"><span class="icon">🎨</span><h2>Inventer et créer</h2></div>
-
-          <h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Nom de groupe de musique</h4>
-            <div class="situation"><strong>Situation :</strong> Nouveau groupe avec tes potes. Rock alternatif + influences rap. Vous voulez un nom original qui sonne bien et qui a du sens.</div>
-            <p class="task">→ Écris un prompt pour des idées de noms.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Demande 20 noms très différents classés par style (mystérieux, provocant, poétique, etc.)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Customiser ses vêtements</h4>
-            <div class="situation"><strong>Situation :</strong>Tu as des vieux t-shirts blancs et un jean déchiré. Tu veux les customiser pour leur donner un style unique (peinture textile, patches, broderie). Tu n'as jamais fait ça mais tu es motivé. Budget : 30€.</div>
-            <p class="task">→ Écris un prompt pour des idées réalisables pour débutant.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère plusieurs styles possibles avant de choisir</li>
-                  <li><strong>🧩 Exemples :</strong> Montre une photo d'un style que tu aimes pour que l'IA s'en inspire</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Inventer un jeu de société</h4>
-            <div class="situation"><strong>Situation :</strong>Projet d'arts : créer un jeu de société sur le thème "voyage dans le temps". Idées vagues (cartes, plateau, dés) mais tu ne sais pas comment assembler.</div>
-            <p class="task">→ Écris un prompt pour des pistes créatives.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère 5 concepts de mécaniques de jeu très différentes</li>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour affiner ton concept (nombre de joueurs, durée, niveau de complexité)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Playlist road trip</h4>
-            <div class="situation"><strong>Situation :</strong> Tu organises un road trip de 6h en Espagne avec tes potes. Tu veux créer une playlist progressive qui commence cool le matin, monte en énergie l'après-midi, et redescend en fin de journée. Vos goûts musicaux sont variés (pop, rock, electro, rap).</div>
-            <p class="task">→ Écris un prompt pour concevoir la structure.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Demande plusieurs "arcs narratifs" possibles pour ta playlist</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Fais expliquer la logique de progression (BPM, énergie, ambiance)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Logo pour mini-entreprise</h4>
-            <div class="situation"><strong>Situation :</strong> Vous avez créé une mini-entreprise "ReCréa" : objets recyclés (bracelets, porte-clés, déco). Logo moderne, coloré, écolo ET créatif. Aucune compétence en design.</div>
-            <p class="task">→ Écris un prompt pour conceptualiser le logo.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère 5 concepts visuels très différents</li>
-                  <li><strong>🧩 Exemples :</strong> Donne des exemples de logos que tu aimes pour définir un style</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Escape game pédagogique</h4>
-            <div class="situation"><strong>Situation :</strong> Votre classe doit créer un escape game sur la Seconde Guerre mondiale pour les 3èmes. Vous avez une salle (Tout l'escape game doit s'y dérouler), 45 minutes de jeu, budget 50€. Vous voulez 5 énigmes qui font réviser les dates-clés, les personnages et les événements, tout en restant fun et immersif.</div>
-            <p class="task">→ Écris un prompt pour concevoir scénario et énigmes.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de t'aider à préciser ton projet</li>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque énigme selon faisabilité, lien pédagogique, difficulté</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Structure la progression narrative des énigmes</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Nouvelle à plusieurs mains</h4>
-            <div class="situation"><strong>Situation :</strong> Tu dois écrire une nouvelle de 3 pages. Thème : "Une rencontre inattendue". Idée de départ (objet bizarre dans le casier) mais tu sèches pour la suite. Tu veux garder le contrôle.</div>
-            <p class="task">→ Écris un prompt pour faire de l'IA ton co-auteur.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur ton personnage, l'ambiance, les enjeux</li>
-                  <li><strong>🌱 Divergence :</strong> Demande 3 directions possibles à chaque moment clé de l'histoire, puis choisis</li>
-                </ul>
-                <div class="tip-box">💡 <strong>Astuce :</strong> "Propose-moi 3 directions différentes pour la suite, je choisirai"</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Challenge TikTok original</h4>
-            <div class="situation"><strong>Situation :</strong>Tu veux créer un challenge TikTok qui pourrait devenir viral. Tu aimes la danse et les transitions créatives. Tu veux que ce soit accessible (tout le monde peut le faire), fun, et avec une petite difficulté pour que ce soit challengeant.</div>
-            <p class="task">→ Écris un prompt pour développer le concept.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère 10 concepts de challenges très différents</li>
-                  <li><strong>🕵️ Fact checking :</strong> Vérifie que ton concept n'existe pas déjà (l'IA peut inventer !)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Concept de chaîne YouTube</h4>
-            <div class="situation"><strong>Situation :</strong> Lancer une chaîne YouTube sur ta passion (gaming, cuisine, science, musique ou autre). 1000 chaînes similaires déjà vues. Trouver un angle original. Matériel basique (smartphone, micro).</div>
-            <p class="task">→ Écris un prompt pour brainstormer des concepts uniques.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère 15 angles originaux classés par type (humour, expertise, format, personnage...)</li>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon tes critères (faisabilité avec ton matériel, originalité, potentiel d'audience...)</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Pitcher une app mobile</h4>
-            <div class="situation"><strong>Situation :</strong> Tu as une idée d'app pour aider les étudiants à trouver des logements abordables avec un système de notation par les locataires précédents et les propriétaires. Tu n'es pas développeur mais tu veux pitcher cette idée à un concours. Tu dois définir : fonctionnalités clés, business model, différenciation vs concurrents.</div>
-            <p class="task">→ Écris un prompt pour structurer ton concept et pitch.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌳 Arbre de pensées :</strong> Compare plusieurs modèles économiques possibles</li>
-                  <li><strong>🦴 Squelette :</strong> Structure ton pitch avant de le développer</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Développe chaque partie avec sa logique argumentative</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- CATÉGORIE 4: BUREAU -->
-      <!-- ============================================== -->
-      <section id="bureau" class="content-section category-section" style="display: none;">
-        <div class="container">
-          <div class="category-header"><span class="icon">💼</span><h2>Travaux de bureau</h2></div>
-
-          <h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Mail professionnel</h4>
-            <div class="situation"><strong>Situation :</strong>Envoyer un mail à ton maître de stage pour confirmer tes horaires de la semaine prochaine. Tu veux être poli et professionnel, mais tu ne sais pas trop comment formuler.</div>
-            <p class="task">→ Écris un prompt pour rédiger un mail adapté.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🧩 Exemples :</strong> Donne un exemple de mail professionnel que tu trouves bien pour que l'IA s'en inspire</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Signature email</h4>
-            <div class="situation"><strong>Situation :</strong> Ton entreprise de stage te demande de créer ta signature email avec : nom, poste, entreprise, téléphone, email, logo de l'entreprise. Tu veux que ce soit professionnel et bien formaté mais tu ne sais pas quelle structure utiliser.</div>
-            <p class="task">→ Écris un prompt pour concevoir ta signature.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🧩 Exemples :</strong> Montre des exemples de signatures que tu trouves bien</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Gérer les priorités</h4>
-            <div class="situation"><strong>Situation :</strong> Ton responsable de stage te confie 8 tâches à faire "cette semaine" : mettre à jour le fichier clients, préparer des badges pour un événement, classer 6 mois d'archives, relancer 3 fournisseurs, scanner des documents, commander des fournitures, etc. Problème : tu as 15h de stage cette semaine et tout semble urgent. Tu dois prioriser intelligemment.</div>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌳 Arbre de pensées :</strong> Évalue chaque tâche selon plusieurs critères (urgence réelle, temps estimé, impact si non fait, possibilité de déléguer)</li>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour clarifier les vrais deadlines et dépendances entre tâches</li>
-                </ul>
-                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Dans le monde pro, "urgent" ne veut pas toujours dire "important". Comment apprendre à dire non poliment ?</div>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Les 8 tâches à prioriser</div>
-              <div class="download-links">
-                <a href="files/taches_a_prioriser.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>taches_a_prioriser.docx</span>
-                </a>
-              </div>
-              <p class="file-info">8 tâches détaillées avec temps, deadlines, dépendances + récapitulatif</p>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Guide de passation</h4>
-            <div class="situation"><strong>Situation :</strong> Ton stage se termine dans 2 semaines. Tu dois former ton remplaçant (ou laisser un document) pour expliquer les tâches quotidiennes que tu faisais : où trouver les fichiers, comment traiter telle demande, qui contacter en cas de problème, les petits trucs non-écrits mais importants. Tu veux créer un guide de passation clair et utile.</div>
-            <p class="task">→ Écris un prompt pour structurer ce guide complet.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="metalangage">🧠 Métalangage</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur tes tâches pour faire ressortir les détails que tu aurais oubliés</li>
-                  <li><strong>🌱 Divergence :</strong> Génère plusieurs formats possibles (checklist, guide étape par étape, FAQ, mix) avant de choisir</li>
-                  <li><strong>🧠 Métalangage :</strong> Crée un système de codes pour hiérarchiser l'info (URGENT, QUOTIDIEN, HEBDO, ASTUCE)</li>
-                </ul>
-                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Tu documentes ton travail pour aider ton remplaçant... mais aussi pour prouver ta valeur !</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Tableau Excel de suivi factures</h4>
-            <div class="situation"><strong>Situation :</strong> Créer un tableau de suivi des factures pour ton entreprise de stage. Colonnes : numéro facture, client, montant HT, TVA 21%, montant TTC, statut paiement (payé/en attente/en retard). Tu veux automatiser les calculs et mettre en couleur les factures en retard.</div>
-            <p class="task">→ Écris un prompt pour construire ce tableau avec formules.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape pour chaque formule</li>
-                </ul>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Tableau à améliorer </div>
-              <div class="download-links">
-                <a href="files/factures_bases.xlsx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>factures_bases.xlsx</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Questionnaire de satisfaction</h4>
-            <div class="situation"><strong>Situation :</strong> Ton entreprise veut lancer un questionnaire de satisfaction après chaque prestation. Tu dois créer un formulaire (papier ou Google Forms) avec 10-15 questions pertinentes : qualité du service, délais, communication, recommandation. Mix de questions fermées et ouvertes.</div>
-            <p class="task">→ Écris un prompt pour concevoir un questionnaire efficace.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🌱 Divergence :</strong> Génère plusieurs types de questions avant de sélectionner</li>
-                  <li><strong>🧩 Exemples :</strong> Donne des exemples de bonnes questions de satisfaction</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Compte-rendu de réunion</h4>
-            <div class="situation"><strong>Situation :</strong> Tu as assisté à une réunion de 45 minutes avec 6 personnes. Tu as pris des notes en vrac (décisions, actions à faire, responsables, deadlines). Tu dois rédiger un compte-rendu professionnel structuré pour l'envoyer à tous les participants avant 17h.</div>
-            <p class="task">→ Écris un prompt pour transformer tes notes en document structuré.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🦴 Squelette :</strong> Définis d'abord la structure du compte-rendu</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Organise les informations par thème/décision</li>
-                </ul>
-              </div>
-            </details>
-           <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Compte rendu </div>
-              <div class="download-links">
-                <a href="files/reunion_10_11.docx" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>reunion_10_11.docx</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Nettoyer une base de données</h4>
-            <div class="situation"><strong>Situation :</strong>Ton entreprise de stage te confie une liste Excel de 300 clients désorganisée : doublons, adresses incomplètes, certains sans téléphone, formatage incohérent. Tu dois nettoyer cette base, la structurer proprement et créer des catégories (clients actifs/inactifs, par région, par CA).</div>
-            <p class="task">→ Écris un prompt pour te guider dans le nettoyage et la structuration.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Demande une méthodologie étape par étape</li>
-                </ul>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Fichier d'exercice</div>
-              <div class="download-links">
-                <a href="files/base_clients_desorganisee.csv" download class="download-btn">
-                  <span class="icon">📊</span>
-                  <span>base_clients_desorganisee.csv</span>
-                </a>
-              </div>
-              <p class="file-info">50 entrées avec doublons, formats incohérents, données manquantes... Bonne chance !</p>
-            </div>
-          </div>
-
-          <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Présentation PowerPoint percutante</h4>
-            <div class="situation"><strong>Situation :</strong>Ton responsable te demande de préparer une présentation (10 slides max) pour présenter les résultats trimestriels du service aux autres départements. Tu as les chiffres (ventes, objectifs, écarts) et quelques graphiques Excel. Tu dois rendre ça visuel, clair et professionnel. Public : managers qui n'ont que 15 minutes.</div>
-            <p class="task">→ Écris un prompt pour structurer et conseiller design + storytelling.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-              <span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🦴 Squelette :</strong> Structure d'abord les messages clés par slide</li>
-                  <li><strong>🧩 Exemples :</strong> Montre un exemple de présentation qui t'a marqué</li>
-                  <li><strong>⛓️ Chaînes de pensées :</strong> Développe le storytelling avec une logique narrative</li>
-                </ul>
-              </div>
-            </details>
-            <!-- TÉLÉCHARGEMENT -->
-            <div class="download-section">
-              <div class="download-section-title">📁 Fichiers d'exercice — SportPlus Distribution T3 2024</div>
-              <div class="download-links">
-                <a href="files/resultats_t3_2024.xlsx" download class="download-btn">
-                  <span class="icon">📊</span>
-                  <span>resultats_t3_2024.xlsx</span>
-                </a>
-                <a href="files/brief_presentation.pdf" download class="download-btn">
-                  <span class="icon">📄</span>
-                  <span>brief_presentation.pdf</span>
-                </a>
-              </div>
-              <p class="file-info">Le brief de ton manager + les données Excel complètes (5 onglets). À toi de jouer !</p>
-            </div>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Système de templates mails modulaires</h4>
-            <div class="situation"><strong>Situation :</strong>En stage, tu envoies 15-20 mails par jour avec des situations récurrentes : confirmation de rendez-vous, relance facture, réponse à une demande de devis, accusé de réception, gestion d'un retard, etc. Tu perds du temps à réécrire à chaque fois. Tu veux créer un système de templates modulaires : des blocs réutilisables (intro formelle/décontractée, corps selon situation, conclusions variées) que tu peux assembler rapidement selon le contexte, tout en gardant une cohérence professionnelle.</div>
-            <p class="task">→ Écris un prompt pour concevoir ce système avec règles d'assemblage.</p>
-            <div class="principles"><span class="principles-title">💡 Principes :</span><br>
-              <span class="principle-tag" data-principle="metalangage">🧠 Métalangage</span>
-              <span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
-              <span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
-              <span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
-            </div>
-            <details class="expand-section">
-              <summary>📖 Comment utiliser ces principes ?</summary>
-              <div class="expand-content">
-                <ul>
-                  <li><strong>🧠 Métalangage :</strong> Crée des codes pour tes modules (INTRO-FORM, INTRO-RELAX, CORPS-RELANCE-01, CONCLU-URGENTE...)</li>
-                  <li><strong>🌱 Divergence :</strong> Génère 5-6 variantes pour chaque type de bloc avec tonalités différentes</li>
-                  <li><strong>🦴 Squelette :</strong> Définis d'abord l'architecture complète avant de rédiger</li>
-                  <li><strong>🧩 Exemples :</strong> Donne 2-3 mails que tu as déjà envoyés pour que l'IA comprenne le ton</li>
-                </ul>
-                <div class="example-box">
-                  <strong>Exemple d'assemblage :</strong><br>
-                  SITUATION: Relancer un client<br>
+<li>Faisabilité technique (peut-on vraiment le construire ?)</li>
+<li>Impact visuel (ça va impressionner ?)</li>
+<li>Respect du budget (sous les 20€ ?)</li>
+<li>Originalité vs les autres groupes</li>
+</ul>
+</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Demande un tableau comparatif avec une note sur 5 pour chaque critère</div>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Consignes complètes du projet</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/projet_maquette_ecologique.docx">
+<span class="icon">📄</span>
+<span>projet_maquette_ecologique.docx</span>
+</a>
+</div>
+<p class="file-info">Critères de notation, contraintes matérielles, planning et conseils du prof</p>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Comparer des offres de logement</h4>
+<div class="situation"><strong>Situation :</strong> Tu cherches un kot pour l'année prochaine. Tu as 5 options avec des prix, distances, équipements différents. Certains incluent les charges, d'autres non. Tu veux comparer objectivement pour faire le meilleur choix selon tes critères (budget 400€ max, proche transports, wifi inclus).</div>
+<p class="task">→ Écris un prompt pour analyser et comparer objectivement.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse critère par critère avec raisonnement explicite</li>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs scénarios (budget serré vs confort, proximité vs prix...)</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Demande de calculer le coût RÉEL mensuel en incluant les charges cachées (transport, internet...)</div>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Les 5 offres à analyser</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/offres_logement_etudiant.docx">
+<span class="icon">📄</span>
+<span>offres_logement_etudiant.docx</span>
+</a>
+</div>
+<p class="file-info">5 offres détaillées avec tous les critères + tableau récapitulatif</p>
+</div>
+</div>
+<h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
+<div class="retro-card exercise-card">
+<h4>Le post viral</h4>
+<div class="situation"><strong>Situation :</strong> Tu veux créer un post Instagram pour sensibiliser tes folowers à l'impact écologique du streaming vidéo. Percutant, pas moralisateur, avec des chiffres qui marquent.</div>
+<p class="task">→ Écris un prompt pour obtenir du contenu adapté.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère plusieurs angles d'approche (humour, choc, comparaison, défi)</li>
+<li><strong>🕵️ Fact checking :</strong> Vérifie les chiffres sur l'impact écologique</li>
+</ul>
+<div class="warning-box">⚠️ <strong>Attention :</strong> L'IA peut inventer des statistiques ! Toujours croiser avec des sources fiables.</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Négocier une augmentation</h4>
+<div class="situation"><strong>Situation :</strong> Tu travailles comme étudiant dans un café depuis 6 mois. Tu fais plus que ce qui était prévu (gestion stocks, formation des nouveaux, remplacements en urgence). Tu veux demander une augmentation de 1€/h mais tu ne sais pas comment aborder le sujet avec ton patron.
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> Simule un jeu de rôle où l'IA joue ton patron et te pose des objections</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Structure ton argumentaire avec la logique derrière chaque point</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Demande à l'IA de jouer le rôle d'un patron sceptique pour t'entraîner à répondre aux objections</div>
+</div>
+</details>
+</div>
+</div>
+</div></section>
+<!-- ============================================== -->
+<!-- CATÉGORIE 2: COMPÉTENCES -->
+<!-- ============================================== -->
+<section class="content-section category-section" id="apprendre" style="display: none;">
+<div class="container">
+<div class="category-header"><span class="icon">🧠</span><h2>Développer tes compétences</h2></div>
+<h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
+<div class="retro-card exercise-card">
+<h4>Comprendre enfin les fractions</h4>
+<div class="situation"><strong>Situation :</strong> Tu bloques sur les fractions. Quand tu vois 3/4 + 2/3, tu paniques. Tu as besoin de comprendre la logique, pas juste la formule.</div>
+<p class="task">→ Écris un prompt pour une explication adaptée à toi.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape avec le "pourquoi" de chaque étape</li>
+<li><strong>🎮 Le jeu :</strong> Transforme l'apprentissage en défi progressif mais aussi des exemples concrets de la vie de tous les jours ( Par exemple avec des pizzas ou des gâteaux à partager)</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Lancer une conversation avec un inconnu</h4>
+<div class="situation"><strong>Situation :</strong> Demain, journée d'intégration dans ta nouvelle école/classe. Tu ne connais personne et tu stresses à l'idée de rester seul dans ton coin. Tu veux apprendre quelques techniques pour briser la glace naturellement sans avoir l'air désespéré.
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> Laisse l'IA te questionner sur ton style (timide/extraverti), tes centres d'intérêt, ce qui te met mal à l'aise</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Demande des techniques adaptées à ton profil, pas des conseils génériques</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
+<div class="retro-card exercise-card">
+<h4>Mémoriser du vocabulaire</h4>
+<div class="situation"><strong>Situation :</strong> Tu as 20 mots de vocabulaire en néerlandais à apprendre pour vendredi. Lire en boucle ne fonctionne pas. Tu préfères jouer.</div>
+<p class="task">→ Écris un prompt pour un quiz dont tu inventes les règles.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="jeu">🎮 Le jeu</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🎮 Le jeu :</strong> Crée un quiz avec TES propres règles : points, vies, niveaux, défis...</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> Essaie "Quiz avec 3 vies, je perds une vie à chaque erreur, bonus x2 si je réponds en moins de 5 secondes"</div>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Liste de vocabulaire</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/vocabulaire_neerlandais_bureau.docx">
+<span class="icon">📄</span>
+<span>vocabulaire_neerlandais_bureau.docx</span>
+</a>
+</div>
+<p class="file-info">20 mots thème "Le bureau" + astuces mémo + quiz rapide</p>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Comprendre la photosynthèse</h4>
+<div class="situation"><strong>Situation :</strong> En biologie, vous étudiez la photosynthèse. Tu comprends que "les plantes fabriquent leur nourriture" mais tous les détails sur ATP, chlorophylle, cycle de Calvin te perdent complètement. En plus, le remplçant qui vous donne cours a tendance à croire que vous êtes des étudiants de haute école en bio chimie! Tu trouve la synthèse qu'il vous a donnée trop compliquée et tu n'y comprends rien! Tu dois pouvoir expliquer la photosynthèse au prochain contrôle.</div>
+<p class="task">→ Écris un prompt pour une explication progressive.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication progressive du simple au complexe</li>
+<li><strong>🦴 Squelette :</strong> Fais d'abord lister les concepts clés avant de les développer</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 La photosynthèse </div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/cours_photosynthese.docx">
+<span class="icon">📄</span>
+<span>cours_photosynthese.docx</span>
+</a>
+</div>
+<p class="file-info">20 mots thème "Le bureau" + astuces mémo + quiz rapide</p>
+</div>
+</div>
+<h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
+<div class="retro-card exercise-card">
+<h4>Décrypter un texte de Rabelais</h4>
+<div class="situation"><strong>Situation :</strong> Voici un extrait de Rabelais (en français du 16ème siècle). Tu ne comprends rien. Résumé et message de l'auteur à expliquer pour ton cours de français. Tu comprends mieux avec une histoire moderne d'abord.</div>
+<p class="task">→ Écris un prompt pour décoder sans que l'IA fasse le travail à ta place.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="affiner">🔍 Affiner</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande une analyse progressive : d'abord le contexte, puis le vocabulaire difficile, puis le sens</li>
+<li><strong>🔍 Affiner :</strong> Laisse l'IA reformuler ta question pour cibler exactement ce que tu ne comprends pas</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> "Ne me donne pas la réponse, guide-moi vers la compréhension"</div>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Texte à analyser</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/texte_rabelais_gargantua.docx">
+<span class="icon">📄</span>
+<span>texte_rabelais_gargantua.docx</span>
+</a>
+</div>
+<p class="file-info">Extrait de Gargantua + glossaire + questions d'analyse + contexte historique</p>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>S'entraîner à débattre</h4>
+<div class="situation"><strong>Situation :</strong> En cours, tu dois participer à un débat sur un sujet polémique : "Faut-il interdire les smartphones au lycée ?" (Ou un autre thème ;)). Tu as ton opinion mais dès que quelqu'un te contredit, tu bloques. Tu veux apprendre à structurer tes arguments, anticiper les objections et répondre sans t'énerver.</div>
+<p class="task">→ Écris un prompt pour t'entraîner à argumenter solidement.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+<span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de l'opposant et te challenge avec des objections de plus en plus pointues</li>
+<li><strong>🌳 Arbre de pensées :</strong> Pour chaque argument, évalue sa force selon plusieurs critères (solidité logique, impact émotionnel, difficulté à contrer)</li>
+<li><strong>🕵️ Fact checking :</strong> Vérifie les statistiques et exemples que tu utilises</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
+<div class="retro-card exercise-card">
+<h4>Créer ses exercices de chimie</h4>
+<div class="situation"><strong>Situation :</strong> Test sur les liaisons chimiques (Ou un autre thème... Mais qqch de difficile!) la semaine prochaine. Le prof a donné 5 exercices types. Tu veux 10 exercices supplémentaires du même niveau avec corrections détaillées.</div>
+<p class="task">→ Écris un prompt pour générer des exercices similaires.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🧩 Exemples :</strong> Donne les 5 exercices du prof comme exemples pour que l'IA génère des exercices similaires</li>
+<li><strong>🌱 Divergence :</strong> Demande des variations : même concept, contextes différents</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Appliquer la méthode Feynman</h4>
+<div class="situation"><strong>Situation :</strong>Tu as entendu parler de la méthode Feynman pour vraiment comprendre (pas juste mémoriser). Tu veux l'appliquer pour réviser ton chapitre d'économie sur l'offre et la demande, mais tu ne sais pas exactement comment procéder étape par étape.</div>
+<p class="task">→ Demande à l'IA de t'expliquer la méthode Feynman puis demande lui de l'utiliser avec toi</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande une explication étape par étape de la méthode Feynman</li>
+<li><strong>🔄 Interactions inversées :</strong> L'IA joue le rôle de "l'enfant de 10 ans" à qui tu dois expliquer, et te pose des questions naïves</li>
+</ul>
+<div class="tip-box">💡 <strong>Méthode Feynman :</strong> 1) Choisis un concept 2) Explique-le simplement 3) Identifie les lacunes 4) Simplifie encore</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
+<div class="retro-card exercise-card">
+<h4>Préparer un oral avec feedback</h4>
+<div class="situation"><strong>Situation :</strong> Tu dois présenter ton stage devant la classe (5 min). Tu stresses et tu te perds dans tes idées. Tu veux un discours structuré ET des conseils pour gérer ton stress.</div>
+<p class="task">→ Écris un prompt pour préparer et améliorer ta prestation.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> Simule l'oral : l'IA te pose les questions du jury</li>
+<li><strong>🧩 Exemples :</strong> Donne un exemple de présentation réussie que tu as vue pour t'en inspirer</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Structure ton discours avec une logique claire (accroche → développement → conclusion)</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Créer son planning de révision</h4>
+<div class="situation"><strong>Situation :</strong> Tu as 3 semaines avant les examens finaux. 7 matières à réviser, certaines plus importantes que d'autres. Tu connais tes points forts/faibles par matière. Tu veux créer un planning de révision réaliste qui optimise ton temps et respecte ta capacité de concentration (max 4h d'étude intense par jour).</div>
+<p class="task">→ Écris un prompt pour un planning personnalisé (Qui tient compte de tes impératifs) avec des objectifs quotidiens.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue plusieurs stratégies de révision selon tes critères (efficacité, réalisme, variété)</li>
+<li><strong>🦴 Squelette :</strong> Demande d'abord un plan global avant les détails jour par jour</li>
+<li><strong>🌱 Divergence :</strong> Génère plusieurs versions du planning avant de choisir</li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</div></section>
+<!-- ============================================== -->
+<!-- CATÉGORIE 3: CRÉER -->
+<!-- ============================================== -->
+<section class="content-section category-section" id="creer" style="display: none;">
+<div class="container">
+<div class="category-header"><span class="icon">🎨</span><h2>Inventer et créer</h2></div>
+<h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
+<div class="retro-card exercise-card">
+<h4>Nom de groupe de musique</h4>
+<div class="situation"><strong>Situation :</strong> Nouveau groupe avec tes potes. Rock alternatif + influences rap. Vous voulez un nom original qui sonne bien et qui a du sens.</div>
+<p class="task">→ Écris un prompt pour des idées de noms.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Demande 20 noms très différents classés par style (mystérieux, provocant, poétique, etc.)</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Customiser ses vêtements</h4>
+<div class="situation"><strong>Situation :</strong>Tu as des vieux t-shirts blancs et un jean déchiré. Tu veux les customiser pour leur donner un style unique (peinture textile, patches, broderie). Tu n'as jamais fait ça mais tu es motivé. Budget : 30€.</div>
+<p class="task">→ Écris un prompt pour des idées réalisables pour débutant.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère plusieurs styles possibles avant de choisir</li>
+<li><strong>🧩 Exemples :</strong> Montre une photo d'un style que tu aimes pour que l'IA s'en inspire</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
+<div class="retro-card exercise-card">
+<h4>Inventer un jeu de société</h4>
+<div class="situation"><strong>Situation :</strong>Projet d'arts : créer un jeu de société sur le thème "voyage dans le temps". Idées vagues (cartes, plateau, dés) mais tu ne sais pas comment assembler.</div>
+<p class="task">→ Écris un prompt pour des pistes créatives.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère 5 concepts de mécaniques de jeu très différentes</li>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour affiner ton concept (nombre de joueurs, durée, niveau de complexité)</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Playlist road trip</h4>
+<div class="situation"><strong>Situation :</strong> Tu organises un road trip de 6h en Espagne avec tes potes. Tu veux créer une playlist progressive qui commence cool le matin, monte en énergie l'après-midi, et redescend en fin de journée. Vos goûts musicaux sont variés (pop, rock, electro, rap).</div>
+<p class="task">→ Écris un prompt pour concevoir la structure.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Demande plusieurs "arcs narratifs" possibles pour ta playlist</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Fais expliquer la logique de progression (BPM, énergie, ambiance)</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
+<div class="retro-card exercise-card">
+<h4>Logo pour mini-entreprise</h4>
+<div class="situation"><strong>Situation :</strong> Vous avez créé une mini-entreprise "ReCréa" : objets recyclés (bracelets, porte-clés, déco). Logo moderne, coloré, écolo ET créatif. Aucune compétence en design.</div>
+<p class="task">→ Écris un prompt pour conceptualiser le logo.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère 5 concepts visuels très différents</li>
+<li><strong>🧩 Exemples :</strong> Donne des exemples de logos que tu aimes pour définir un style</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Escape game pédagogique</h4>
+<div class="situation"><strong>Situation :</strong> Votre classe doit créer un escape game sur la Seconde Guerre mondiale pour les 3èmes. Vous avez une salle (Tout l'escape game doit s'y dérouler), 45 minutes de jeu, budget 50€. Vous voulez 5 énigmes qui font réviser les dates-clés, les personnages et les événements, tout en restant fun et immersif.</div>
+<p class="task">→ Écris un prompt pour concevoir scénario et énigmes.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> Demande à l'IA de t'aider à préciser ton projet</li>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue chaque énigme selon faisabilité, lien pédagogique, difficulté</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Structure la progression narrative des énigmes</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
+<div class="retro-card exercise-card">
+<h4>Nouvelle à plusieurs mains</h4>
+<div class="situation"><strong>Situation :</strong> Tu dois écrire une nouvelle de 3 pages. Thème : "Une rencontre inattendue". Idée de départ (objet bizarre dans le casier) mais tu sèches pour la suite. Tu veux garder le contrôle.</div>
+<p class="task">→ Écris un prompt pour faire de l'IA ton co-auteur.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur ton personnage, l'ambiance, les enjeux</li>
+<li><strong>🌱 Divergence :</strong> Demande 3 directions possibles à chaque moment clé de l'histoire, puis choisis</li>
+</ul>
+<div class="tip-box">💡 <strong>Astuce :</strong> "Propose-moi 3 directions différentes pour la suite, je choisirai"</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Challenge TikTok original</h4>
+<div class="situation"><strong>Situation :</strong>Tu veux créer un challenge TikTok qui pourrait devenir viral. Tu aimes la danse et les transitions créatives. Tu veux que ce soit accessible (tout le monde peut le faire), fun, et avec une petite difficulté pour que ce soit challengeant.</div>
+<p class="task">→ Écris un prompt pour développer le concept.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="factchecking">🕵️ Fact checking</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère 10 concepts de challenges très différents</li>
+<li><strong>🕵️ Fact checking :</strong> Vérifie que ton concept n'existe pas déjà (l'IA peut inventer !)</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
+<div class="retro-card exercise-card">
+<h4>Concept de chaîne YouTube</h4>
+<div class="situation"><strong>Situation :</strong> Lancer une chaîne YouTube sur ta passion (gaming, cuisine, science, musique ou autre). 1000 chaînes similaires déjà vues. Trouver un angle original. Matériel basique (smartphone, micro).</div>
+<p class="task">→ Écris un prompt pour brainstormer des concepts uniques.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère 15 angles originaux classés par type (humour, expertise, format, personnage...)</li>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue chaque concept selon tes critères (faisabilité avec ton matériel, originalité, potentiel d'audience...)</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Pitcher une app mobile</h4>
+<div class="situation"><strong>Situation :</strong> Tu as une idée d'app pour aider les étudiants à trouver des logements abordables avec un système de notation par les locataires précédents et les propriétaires. Tu n'es pas développeur mais tu veux pitcher cette idée à un concours. Tu dois définir : fonctionnalités clés, business model, différenciation vs concurrents.</div>
+<p class="task">→ Écris un prompt pour structurer ton concept et pitch.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌳 Arbre de pensées :</strong> Compare plusieurs modèles économiques possibles</li>
+<li><strong>🦴 Squelette :</strong> Structure ton pitch avant de le développer</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Développe chaque partie avec sa logique argumentative</li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- CATÉGORIE 4: BUREAU -->
+<!-- ============================================== -->
+<section class="content-section category-section" id="bureau" style="display: none;">
+<div class="container">
+<div class="category-header"><span class="icon">💼</span><h2>Travaux de bureau</h2></div>
+<h3><span class="level-badge level-1">⭐ Niveau 1</span></h3>
+<div class="retro-card exercise-card">
+<h4>Mail professionnel</h4>
+<div class="situation"><strong>Situation :</strong>Envoyer un mail à ton maître de stage pour confirmer tes horaires de la semaine prochaine. Tu veux être poli et professionnel, mais tu ne sais pas trop comment formuler.</div>
+<p class="task">→ Écris un prompt pour rédiger un mail adapté.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🧩 Exemples :</strong> Donne un exemple de mail professionnel que tu trouves bien pour que l'IA s'en inspire</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Signature email</h4>
+<div class="situation"><strong>Situation :</strong> Ton entreprise de stage te demande de créer ta signature email avec : nom, poste, entreprise, téléphone, email, logo de l'entreprise. Tu veux que ce soit professionnel et bien formaté mais tu ne sais pas quelle structure utiliser.</div>
+<p class="task">→ Écris un prompt pour concevoir ta signature.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🧩 Exemples :</strong> Montre des exemples de signatures que tu trouves bien</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-2">⭐⭐ Niveau 2</span></h3>
+<div class="retro-card exercise-card">
+<h4>Gérer les priorités</h4>
+<div class="situation"><strong>Situation :</strong> Ton responsable de stage te confie 8 tâches à faire "cette semaine" : mettre à jour le fichier clients, préparer des badges pour un événement, classer 6 mois d'archives, relancer 3 fournisseurs, scanner des documents, commander des fournitures, etc. Problème : tu as 15h de stage cette semaine et tout semble urgent. Tu dois prioriser intelligemment.</div>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="arbre">🌳 Arbre de pensées</span>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌳 Arbre de pensées :</strong> Évalue chaque tâche selon plusieurs critères (urgence réelle, temps estimé, impact si non fait, possibilité de déléguer)</li>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions pour clarifier les vrais deadlines et dépendances entre tâches</li>
+</ul>
+<div class="warning-box">⚠️ <strong>Point d'attention :</strong> Dans le monde pro, "urgent" ne veut pas toujours dire "important". Comment apprendre à dire non poliment ?</div>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Les 8 tâches à prioriser</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/taches_a_prioriser.docx">
+<span class="icon">📄</span>
+<span>taches_a_prioriser.docx</span>
+</a>
+</div>
+<p class="file-info">8 tâches détaillées avec temps, deadlines, dépendances + récapitulatif</p>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Guide de passation</h4>
+<div class="situation"><strong>Situation :</strong> Ton stage se termine dans 2 semaines. Tu dois former ton remplaçant (ou laisser un document) pour expliquer les tâches quotidiennes que tu faisais : où trouver les fichiers, comment traiter telle demande, qui contacter en cas de problème, les petits trucs non-écrits mais importants. Tu veux créer un guide de passation clair et utile.</div>
+<p class="task">→ Écris un prompt pour structurer ce guide complet.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="inversees">🔄 Interactions inversées</span>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="metalangage">🧠 Métalangage</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🔄 Interactions inversées :</strong> L'IA te pose des questions sur tes tâches pour faire ressortir les détails que tu aurais oubliés</li>
+<li><strong>🌱 Divergence :</strong> Génère plusieurs formats possibles (checklist, guide étape par étape, FAQ, mix) avant de choisir</li>
+<li><strong>🧠 Métalangage :</strong> Crée un système de codes pour hiérarchiser l'info (URGENT, QUOTIDIEN, HEBDO, ASTUCE)</li>
+</ul>
+<div class="warning-box">⚠️ <strong>Point d'attention :</strong> Tu documentes ton travail pour aider ton remplaçant... mais aussi pour prouver ta valeur !</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3</span></h3>
+<div class="retro-card exercise-card">
+<h4>Tableau Excel de suivi factures</h4>
+<div class="situation"><strong>Situation :</strong> Créer un tableau de suivi des factures pour ton entreprise de stage. Colonnes : numéro facture, client, montant HT, TVA 21%, montant TTC, statut paiement (payé/en attente/en retard). Tu veux automatiser les calculs et mettre en couleur les factures en retard.</div>
+<p class="task">→ Écris un prompt pour construire ce tableau avec formules.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande des explications étape par étape pour chaque formule</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Tableau à améliorer </div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/factures_bases.xlsx">
+<span class="icon">📄</span>
+<span>factures_bases.xlsx</span>
+</a>
+</div>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Questionnaire de satisfaction</h4>
+<div class="situation"><strong>Situation :</strong> Ton entreprise veut lancer un questionnaire de satisfaction après chaque prestation. Tu dois créer un formulaire (papier ou Google Forms) avec 10-15 questions pertinentes : qualité du service, délais, communication, recommandation. Mix de questions fermées et ouvertes.</div>
+<p class="task">→ Écris un prompt pour concevoir un questionnaire efficace.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🌱 Divergence :</strong> Génère plusieurs types de questions avant de sélectionner</li>
+<li><strong>🧩 Exemples :</strong> Donne des exemples de bonnes questions de satisfaction</li>
+</ul>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4</span></h3>
+<div class="retro-card exercise-card">
+<h4>Compte-rendu de réunion</h4>
+<div class="situation"><strong>Situation :</strong> Tu as assisté à une réunion de 45 minutes avec 6 personnes. Tu as pris des notes en vrac (décisions, actions à faire, responsables, deadlines). Tu dois rédiger un compte-rendu professionnel structuré pour l'envoyer à tous les participants avant 17h.</div>
+<p class="task">→ Écris un prompt pour transformer tes notes en document structuré.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🦴 Squelette :</strong> Définis d'abord la structure du compte-rendu</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Organise les informations par thème/décision</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Compte rendu </div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/reunion_10_11.docx">
+<span class="icon">📄</span>
+<span>reunion_10_11.docx</span>
+</a>
+</div>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Nettoyer une base de données</h4>
+<div class="situation"><strong>Situation :</strong>Ton entreprise de stage te confie une liste Excel de 300 clients désorganisée : doublons, adresses incomplètes, certains sans téléphone, formatage incohérent. Tu dois nettoyer cette base, la structurer proprement et créer des catégories (clients actifs/inactifs, par région, par CA).</div>
+<p class="task">→ Écris un prompt pour te guider dans le nettoyage et la structuration.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>⛓️ Chaînes de pensées :</strong> Demande une méthodologie étape par étape</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Fichier d'exercice</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/base_clients_desorganisee.csv">
+<span class="icon">📊</span>
+<span>base_clients_desorganisee.csv</span>
+</a>
+</div>
+<p class="file-info">50 entrées avec doublons, formats incohérents, données manquantes... Bonne chance !</p>
+</div>
+</div>
+<h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5</span></h3>
+<div class="retro-card exercise-card">
+<h4>Présentation PowerPoint percutante</h4>
+<div class="situation"><strong>Situation :</strong>Ton responsable te demande de préparer une présentation (10 slides max) pour présenter les résultats trimestriels du service aux autres départements. Tu as les chiffres (ventes, objectifs, écarts) et quelques graphiques Excel. Tu dois rendre ça visuel, clair et professionnel. Public : managers qui n'ont que 15 minutes.</div>
+<p class="task">→ Écris un prompt pour structurer et conseiller design + storytelling.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+<span class="principle-tag" data-principle="chaine">⛓️ Chaînes de pensées</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🦴 Squelette :</strong> Structure d'abord les messages clés par slide</li>
+<li><strong>🧩 Exemples :</strong> Montre un exemple de présentation qui t'a marqué</li>
+<li><strong>⛓️ Chaînes de pensées :</strong> Développe le storytelling avec une logique narrative</li>
+</ul>
+</div>
+</details>
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+<div class="download-section-title">📁 Fichiers d'exercice — SportPlus Distribution T3 2024</div>
+<div class="download-links">
+<a class="download-btn" download="" href="files/resultats_t3_2024.xlsx">
+<span class="icon">📊</span>
+<span>resultats_t3_2024.xlsx</span>
+</a>
+<a class="download-btn" download="" href="files/brief_presentation.pdf">
+<span class="icon">📄</span>
+<span>brief_presentation.pdf</span>
+</a>
+</div>
+<p class="file-info">Le brief de ton manager + les données Excel complètes (5 onglets). À toi de jouer !</p>
+</div>
+</div>
+<div class="retro-card exercise-card">
+<h4>Système de templates mails modulaires</h4>
+<div class="situation"><strong>Situation :</strong>En stage, tu envoies 15-20 mails par jour avec des situations récurrentes : confirmation de rendez-vous, relance facture, réponse à une demande de devis, accusé de réception, gestion d'un retard, etc. Tu perds du temps à réécrire à chaque fois. Tu veux créer un système de templates modulaires : des blocs réutilisables (intro formelle/décontractée, corps selon situation, conclusions variées) que tu peux assembler rapidement selon le contexte, tout en gardant une cohérence professionnelle.</div>
+<p class="task">→ Écris un prompt pour concevoir ce système avec règles d'assemblage.</p>
+<div class="principles"><span class="principles-title">💡 Principes :</span><br/>
+<span class="principle-tag" data-principle="metalangage">🧠 Métalangage</span>
+<span class="principle-tag" data-principle="divergence">🌱 Divergence</span>
+<span class="principle-tag" data-principle="squelette">🦴 Squelette</span>
+<span class="principle-tag" data-principle="exemples">🧩 Exemples</span>
+</div>
+<details class="expand-section">
+<summary>📖 Comment utiliser ces principes ?</summary>
+<div class="expand-content">
+<ul>
+<li><strong>🧠 Métalangage :</strong> Crée des codes pour tes modules (INTRO-FORM, INTRO-RELAX, CORPS-RELANCE-01, CONCLU-URGENTE...)</li>
+<li><strong>🌱 Divergence :</strong> Génère 5-6 variantes pour chaque type de bloc avec tonalités différentes</li>
+<li><strong>🦴 Squelette :</strong> Définis d'abord l'architecture complète avant de rédiger</li>
+<li><strong>🧩 Exemples :</strong> Donne 2-3 mails que tu as déjà envoyés pour que l'IA comprenne le ton</li>
+</ul>
+<div class="example-box">
+<strong>Exemple d'assemblage :</strong><br/>
+                  SITUATION: Relancer un client<br/>
                   → INTRO-RELAX + CORPS-RELANCE-02 + CONCLU-DISPO
                 </div>
-                <div class="warning-box">⚠️ <strong>Point d'attention :</strong> Comment garder une personnalisation sincère tout en utilisant des templates ?</div>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- CATÉGORIE 5: IMAGES -->
-      <!-- ============================================== -->
-      <section id="images" class="content-section category-section" style="display: none;">
-        <div class="container">
-          <div class="category-header"><span class="icon">🖼️</span><h2>Générer des images</h2></div>
-
-          <h3><span class="level-badge level-1">⭐ Niveau 1 — Sujet et style</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Avatar Discord/Steam</h4>
-            <div class="situation"><strong>Situation :</strong>Tu veux créer un avatar stylé pour ton profil Discord/Steam. Tu aimerais qu'il te représente (ton style vestimentaire, tes passions) mais version cartoon ou manga.</div>
-            <p class="task">→ Écris un prompt en décrivant : Sujet + Style + Couleurs</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<div class="warning-box">⚠️ <strong>Point d'attention :</strong> Comment garder une personnalisation sincère tout en utilisant des templates ?</div>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- CATÉGORIE 5: IMAGES -->
+<!-- ============================================== -->
+<section class="content-section category-section" id="images" style="display: none;">
+<div class="container">
+<div class="category-header"><span class="icon">🖼️</span><h2>Générer des images</h2></div>
+<h3><span class="level-badge level-1">⭐ Niveau 1 — Sujet et style</span></h3>
+<div class="retro-card exercise-card">
+<h4>Avatar Discord/Steam</h4>
+<div class="situation"><strong>Situation :</strong>Tu veux créer un avatar stylé pour ton profil Discord/Steam. Tu aimerais qu'il te représente (ton style vestimentaire, tes passions) mais version cartoon ou manga.</div>
+<p class="task">→ Écris un prompt en décrivant : Sujet + Style + Couleurs</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Sujet principal, style visuel (manga, cartoon, pixel art...), palette de couleurs</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Les bases du prompt image</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Sujet principal</strong>Décris précisément ce que tu veux voir (personnage, vêtements, accessoires)</div>
-                  <div class="theory-item"><strong>Style visuel</strong>Manga, cartoon, pixel art, réaliste, aquarelle...</div>
-                  <div class="theory-item"><strong>Palette de couleurs</strong>Indique les couleurs dominantes souhaitées</div>
-                </div>
-                <div class="tip-box">💡 <strong>Formule de base :</strong> Sujet + Style + Couleurs</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Affiche de soirée</h4>
-            <div class="situation"><strong>Situation :</strong> Ton école organise une soirée à thème "Nuit étoilée". Tu dois créer une affiche simple et attrayante pour une story instagram. Penses à laisser de la place pour le titre!</div>
-            <p class="task">→ Écris un prompt en spécifiant format (9:16) et ambiance.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Les bases du prompt image</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Sujet principal</strong>Décris précisément ce que tu veux voir (personnage, vêtements, accessoires)</div>
+<div class="theory-item"><strong>Style visuel</strong>Manga, cartoon, pixel art, réaliste, aquarelle...</div>
+<div class="theory-item"><strong>Palette de couleurs</strong>Indique les couleurs dominantes souhaitées</div>
+</div>
+<div class="tip-box">💡 <strong>Formule de base :</strong> Sujet + Style + Couleurs</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Affiche de soirée</h4>
+<div class="situation"><strong>Situation :</strong> Ton école organise une soirée à thème "Nuit étoilée". Tu dois créer une affiche simple et attrayante pour une story instagram. Penses à laisser de la place pour le titre!</div>
+<p class="task">→ Écris un prompt en spécifiant format (9:16) et ambiance.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Format (portrait, paysage, carré), ambiance (festif, mystérieux...), éléments clés</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Format et ambiance</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Format</strong>Portrait, paysage, carré. Précise les proportions : 9:16 pour story, 1:1 pour post</div>
-                  <div class="theory-item"><strong>Ambiance</strong>Les adjectifs qui décrivent l'atmosphère (festif, mystérieux, chaleureux...)</div>
-                  <div class="theory-item"><strong>Éléments clés</strong>Ce qui doit absolument apparaître dans l'image</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Pense à laisser de l'espace vide pour ajouter du texte ensuite !</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-2">⭐⭐ Niveau 2 — Cadrage et composition</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Pochette d'album lo-fi</h4>
-            <div class="situation"><strong>Situation :</strong> Ton groupe de musique (ou ta playlist perso) a besoin d'une pochette. Style lo-fi hip-hop, ambiance nocturne urbaine.</div>
-            <p class="task">→ Écris un prompt en travaillant le cadrage (gros plan, plan moyen, plan large) et l'angle de vue.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Format et ambiance</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Format</strong>Portrait, paysage, carré. Précise les proportions : 9:16 pour story, 1:1 pour post</div>
+<div class="theory-item"><strong>Ambiance</strong>Les adjectifs qui décrivent l'atmosphère (festif, mystérieux, chaleureux...)</div>
+<div class="theory-item"><strong>Éléments clés</strong>Ce qui doit absolument apparaître dans l'image</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Pense à laisser de l'espace vide pour ajouter du texte ensuite !</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-2">⭐⭐ Niveau 2 — Cadrage et composition</span></h3>
+<div class="retro-card exercise-card">
+<h4>Pochette d'album lo-fi</h4>
+<div class="situation"><strong>Situation :</strong> Ton groupe de musique (ou ta playlist perso) a besoin d'une pochette. Style lo-fi hip-hop, ambiance nocturne urbaine.</div>
+<p class="task">→ Écris un prompt en travaillant le cadrage (gros plan, plan moyen, plan large) et l'angle de vue.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Types de plans (gros plan = intimité, plan large = solitude), angle de vue (plongée, contre-plongée)</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Cadrage et composition</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Gros plan</strong>Visage, objet en détail → intimité</div>
-                  <div class="theory-item"><strong>Plan moyen</strong>Personnage à mi-corps</div>
-                  <div class="theory-item"><strong>Plan large</strong>Environnement complet, personnage petit → solitude, immensité</div>
-                  <div class="theory-item"><strong>Plongée</strong>Vu d'en haut → écrase le sujet</div>
-                  <div class="theory-item"><strong>Contre-plongée</strong>Vu d'en bas → grandit le sujet</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Le cadrage raconte une histoire. Un gros plan = intimité. Un plan large = solitude ou immensité.</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>La Comté du Seigneur des Anneaux</h4>
-            <div class="situation"><strong>Situation :</strong> En cours de français, vous étudiez "Le Seigneur des Anneaux". Tu veux créer une image de la Comté pour illustrer un passage.</div>
-            <p class="task">→ Écris un prompt en décrivant les 3 plans (premier plan, second plan, arrière-plan).</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Cadrage et composition</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Gros plan</strong>Visage, objet en détail → intimité</div>
+<div class="theory-item"><strong>Plan moyen</strong>Personnage à mi-corps</div>
+<div class="theory-item"><strong>Plan large</strong>Environnement complet, personnage petit → solitude, immensité</div>
+<div class="theory-item"><strong>Plongée</strong>Vu d'en haut → écrase le sujet</div>
+<div class="theory-item"><strong>Contre-plongée</strong>Vu d'en bas → grandit le sujet</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Le cadrage raconte une histoire. Un gros plan = intimité. Un plan large = solitude ou immensité.</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>La Comté du Seigneur des Anneaux</h4>
+<div class="situation"><strong>Situation :</strong> En cours de français, vous étudiez "Le Seigneur des Anneaux". Tu veux créer une image de la Comté pour illustrer un passage.</div>
+<p class="task">→ Écris un prompt en décrivant les 3 plans (premier plan, second plan, arrière-plan).</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Règle des tiers, profondeur de champ (3 plans), point focal</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Profondeur et règle des tiers</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Règle des tiers</strong>Place les éléments importants sur les lignes de force (1/3 ou 2/3 de l'image)</div>
-                  <div class="theory-item"><strong>Premier plan</strong>Ce qui est devant, proche</div>
-                  <div class="theory-item"><strong>Second plan</strong>Le sujet principal</div>
-                  <div class="theory-item"><strong>Arrière-plan</strong>Le fond, le décor lointain</div>
-                  <div class="theory-item"><strong>Point focal</strong>Où l'œil doit se poser en premier</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Décris les 3 plans séparément pour une image plus riche.</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3 — Lumière et ambiance</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Portrait cinématographique</h4>
-            <div class="situation"><strong>Situation :</strong> Tu veux créer un portrait de personnage fictif pour une histoire que tu écris. Tu veux une image avec une vraie atmosphère cinéma.</div>
-            <p class="task">→ Écris un prompt en travaillant spécifiquement la lumière.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Profondeur et règle des tiers</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Règle des tiers</strong>Place les éléments importants sur les lignes de force (1/3 ou 2/3 de l'image)</div>
+<div class="theory-item"><strong>Premier plan</strong>Ce qui est devant, proche</div>
+<div class="theory-item"><strong>Second plan</strong>Le sujet principal</div>
+<div class="theory-item"><strong>Arrière-plan</strong>Le fond, le décor lointain</div>
+<div class="theory-item"><strong>Point focal</strong>Où l'œil doit se poser en premier</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Décris les 3 plans séparément pour une image plus riche.</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-3">⭐⭐⭐ Niveau 3 — Lumière et ambiance</span></h3>
+<div class="retro-card exercise-card">
+<h4>Portrait cinématographique</h4>
+<div class="situation"><strong>Situation :</strong> Tu veux créer un portrait de personnage fictif pour une histoire que tu écris. Tu veux une image avec une vraie atmosphère cinéma.</div>
+<p class="task">→ Écris un prompt en travaillant spécifiquement la lumière.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Direction (frontale, latérale, contre-jour, Rembrandt), qualité (dure, douce), température (chaude, froide)</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : La lumière crée l'émotion</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Lumière frontale</strong>Éclairage plat, peu de relief</div>
-                  <div class="theory-item"><strong>Lumière latérale</strong>Crée des ombres, du volume, du mystère</div>
-                  <div class="theory-item"><strong>Contre-jour</strong>Sujet sombre sur fond lumineux, silhouette</div>
-                  <div class="theory-item"><strong>Éclairage Rembrandt</strong>Triangle de lumière sur la joue dans l'ombre</div>
-                  <div class="theory-item"><strong>Lumière dure</strong>Ombres nettes, contraste fort (soleil direct)</div>
-                  <div class="theory-item"><strong>Lumière douce</strong>Ombres diffuses, transitions douces (ciel couvert)</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Lumière chaude (orange/jaune) = réconfort. Lumière froide (bleu/vert) = tension ou mélancolie.</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Même scène : jour vs nuit</h4>
-            <div class="situation"><strong>Situation :</strong> Tu crées deux versions d'une même illustration pour montrer le contraste jour/nuit. C'est pour un projet sur les rythmes circadiens en éducation scientifique.</div>
-            <p class="task">→ Écris deux prompts avec ambiances lumineuses opposées mais mêmes éléments.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : La lumière crée l'émotion</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Lumière frontale</strong>Éclairage plat, peu de relief</div>
+<div class="theory-item"><strong>Lumière latérale</strong>Crée des ombres, du volume, du mystère</div>
+<div class="theory-item"><strong>Contre-jour</strong>Sujet sombre sur fond lumineux, silhouette</div>
+<div class="theory-item"><strong>Éclairage Rembrandt</strong>Triangle de lumière sur la joue dans l'ombre</div>
+<div class="theory-item"><strong>Lumière dure</strong>Ombres nettes, contraste fort (soleil direct)</div>
+<div class="theory-item"><strong>Lumière douce</strong>Ombres diffuses, transitions douces (ciel couvert)</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Lumière chaude (orange/jaune) = réconfort. Lumière froide (bleu/vert) = tension ou mélancolie.</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Même scène : jour vs nuit</h4>
+<div class="situation"><strong>Situation :</strong> Tu crées deux versions d'une même illustration pour montrer le contraste jour/nuit. C'est pour un projet sur les rythmes circadiens en éducation scientifique.</div>
+<p class="task">→ Écris deux prompts avec ambiances lumineuses opposées mais mêmes éléments.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Golden hour, blue hour, midi, nuit, sources lumineuses nocturnes</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Les moments de la journée</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Golden hour</strong>Lumière dorée, ombres longues (lever/coucher de soleil)</div>
-                  <div class="theory-item"><strong>Blue hour</strong>Lumière bleue douce (juste avant le lever ou après le coucher)</div>
-                  <div class="theory-item"><strong>Midi</strong>Lumière dure, ombres courtes</div>
-                  <div class="theory-item"><strong>Nuit</strong>Sources artificielles : lampadaires, néons, lune, étoiles, fenêtres éclairées</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Utilise les mêmes éléments de composition, change uniquement la lumière.</div>
-                <div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Compare les deux images générées. L'IA a-t-elle gardé exactement les mêmes éléments ? Qu'est-ce qui change au-delà de la lumière ?</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4 — Styles artistiques</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>"À la manière de..."</h4>
-            <div class="situation"><strong>Situation :</strong>Pour un cours d'arts plastiques, tu dois créer une image "à la manière de" un mouvement artistique. Tu choisis de représenter ta chambre dans différents styles.</div>
-            <p class="task">→ Écris 3 prompts en nommant le mouvement ET ses caractéristiques.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
-              Mouvements artistiques, médiums (huile, aquarelle, digital...)<br>
-              <span style="color: var(--retro-orange);">⚠️ Évite de citer des artistes vivants (droits d'auteur)</span></div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Styles et mouvements artistiques</summary>
-              <div class="expand-content">
-                <div class="theory-grid">
-                  <div class="theory-item"><strong>Impressionnisme</strong>Touches visibles, lumière naturelle, atmosphère</div>
-                  <div class="theory-item"><strong>Art nouveau</strong>Lignes courbes, motifs organiques, décoratif</div>
-                  <div class="theory-item"><strong>Pop art</strong>Couleurs vives, aplats, style BD</div>
-                  <div class="theory-item"><strong>Ukiyo-e</strong>Aplats, lignes nettes, perspective particulière</div>
-                  <div class="theory-item"><strong>Cyberpunk</strong>Néons, technologie, atmosphère dystopique</div>
-                  <div class="theory-item"><strong>Studio Ghibli</strong>Douceur, détails du quotidien, lumière chaleureuse</div>
-                </div>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Nomme le mouvement ET décris ses caractéristiques pour plus de précision.</div>
-                <div class="warning-box">⚠️ <strong>Éthique :</strong> Évite de citer des artistes vivants — questions de droits d'auteur.</div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Série cohérente (5 images)</h4>
-            <div class="situation"><strong>Situation :</strong>Tu crées un compte Instagram pour raconter une histoire en 5 images : un personnage découvre un objet mystérieux et voyage à travers différents mondes.</div>
-            <p class="task">→ Crée un "guide de style" (personnage, objet, palette fixes) puis écris tes 5 prompts.</p>
-            <div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Les moments de la journée</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Golden hour</strong>Lumière dorée, ombres longues (lever/coucher de soleil)</div>
+<div class="theory-item"><strong>Blue hour</strong>Lumière bleue douce (juste avant le lever ou après le coucher)</div>
+<div class="theory-item"><strong>Midi</strong>Lumière dure, ombres courtes</div>
+<div class="theory-item"><strong>Nuit</strong>Sources artificielles : lampadaires, néons, lune, étoiles, fenêtres éclairées</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Utilise les mêmes éléments de composition, change uniquement la lumière.</div>
+<div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Compare les deux images générées. L'IA a-t-elle gardé exactement les mêmes éléments ? Qu'est-ce qui change au-delà de la lumière ?</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-4">⭐⭐⭐⭐ Niveau 4 — Styles artistiques</span></h3>
+<div class="retro-card exercise-card">
+<h4>"À la manière de..."</h4>
+<div class="situation"><strong>Situation :</strong>Pour un cours d'arts plastiques, tu dois créer une image "à la manière de" un mouvement artistique. Tu choisis de représenter ta chambre dans différents styles.</div>
+<p class="task">→ Écris 3 prompts en nommant le mouvement ET ses caractéristiques.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
+              Mouvements artistiques, médiums (huile, aquarelle, digital...)<br/>
+<span style="color: var(--retro-orange);">⚠️ Évite de citer des artistes vivants (droits d'auteur)</span></div>
+<details class="expand-section">
+<summary>📖 Théorie : Styles et mouvements artistiques</summary>
+<div class="expand-content">
+<div class="theory-grid">
+<div class="theory-item"><strong>Impressionnisme</strong>Touches visibles, lumière naturelle, atmosphère</div>
+<div class="theory-item"><strong>Art nouveau</strong>Lignes courbes, motifs organiques, décoratif</div>
+<div class="theory-item"><strong>Pop art</strong>Couleurs vives, aplats, style BD</div>
+<div class="theory-item"><strong>Ukiyo-e</strong>Aplats, lignes nettes, perspective particulière</div>
+<div class="theory-item"><strong>Cyberpunk</strong>Néons, technologie, atmosphère dystopique</div>
+<div class="theory-item"><strong>Studio Ghibli</strong>Douceur, détails du quotidien, lumière chaleureuse</div>
+</div>
+<div class="tip-box">💡 <strong>Astuce :</strong> Nomme le mouvement ET décris ses caractéristiques pour plus de précision.</div>
+<div class="warning-box">⚠️ <strong>Éthique :</strong> Évite de citer des artistes vivants — questions de droits d'auteur.</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Série cohérente (5 images)</h4>
+<div class="situation"><strong>Situation :</strong>Tu crées un compte Instagram pour raconter une histoire en 5 images : un personnage découvre un objet mystérieux et voyage à travers différents mondes.</div>
+<p class="task">→ Crée un "guide de style" (personnage, objet, palette fixes) puis écris tes 5 prompts.</p>
+<div class="principles"><span class="principles-title">🎨 Éléments à explorer :</span><br/>
               Guide de style constant, éléments variables (décor, lumière, action)</div>
-            <details class="expand-section">
-              <summary>📖 Théorie : Créer une série cohérente</summary>
-              <div class="expand-content">
-                <p><strong>Guide de style à définir AVANT :</strong></p>
-                <ul>
-                  <li>Description fixe du personnage (vêtements, couleur de cheveux, accessoire distinctif)</li>
-                  <li>Description fixe de l'objet mystérieux</li>
-                  <li>Style artistique constant</li>
-                  <li>Palette de couleurs récurrente</li>
-                </ul>
-                <p><strong>Éléments variables :</strong> décor, lumière, action, cadrage</p>
-                <div class="tip-box">💡 <strong>Astuce :</strong> Crée un "bloc de texte" constant que tu copies dans chaque prompt, puis ajoute les variations.</div>
-                <div class="example-box"><strong>Structure :</strong> [BLOC CONSTANT : personnage + objet + style] + [VARIABLE : lieu + action + lumière]</div>
-                <div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Malgré tes efforts, le personnage change-t-il d'une image à l'autre ? C'est une limite actuelle des IA génératives.</div>
-              </div>
-            </details>
-          </div>
-
-          <h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5 — Maîtrise et regard critique</span></h3>
-
-          <div class="retro-card exercise-card">
-            <h4>Diversité et représentation</h4>
-            <div class="situation"><strong>Situation :</strong> Tu crées des visuels pour une campagne de sensibilisation sur le harcèlement scolaire. Tu veux 4 portraits de jeunes montrant leur force et leur dignité.</div>
-            <p class="task">→ Génère d'abord avec un prompt "neutre", analyse les biais, puis réécris pour une vraie diversité.</p>
-            <div class="principles"><span class="principles-title">🔍 Analyse critique :</span><br>
+<details class="expand-section">
+<summary>📖 Théorie : Créer une série cohérente</summary>
+<div class="expand-content">
+<p><strong>Guide de style à définir AVANT :</strong></p>
+<ul>
+<li>Description fixe du personnage (vêtements, couleur de cheveux, accessoire distinctif)</li>
+<li>Description fixe de l'objet mystérieux</li>
+<li>Style artistique constant</li>
+<li>Palette de couleurs récurrente</li>
+</ul>
+<p><strong>Éléments variables :</strong> décor, lumière, action, cadrage</p>
+<div class="tip-box">💡 <strong>Astuce :</strong> Crée un "bloc de texte" constant que tu copies dans chaque prompt, puis ajoute les variations.</div>
+<div class="example-box"><strong>Structure :</strong> [BLOC CONSTANT : personnage + objet + style] + [VARIABLE : lieu + action + lumière]</div>
+<div class="warning-box">🔬 <strong>Réflexion bonus :</strong> Malgré tes efforts, le personnage change-t-il d'une image à l'autre ? C'est une limite actuelle des IA génératives.</div>
+</div>
+</details>
+</div>
+<h3><span class="level-badge level-5">⭐⭐⭐⭐⭐ Niveau 5 — Maîtrise et regard critique</span></h3>
+<div class="retro-card exercise-card">
+<h4>Diversité et représentation</h4>
+<div class="situation"><strong>Situation :</strong> Tu crées des visuels pour une campagne de sensibilisation sur le harcèlement scolaire. Tu veux 4 portraits de jeunes montrant leur force et leur dignité.</div>
+<p class="task">→ Génère d'abord avec un prompt "neutre", analyse les biais, puis réécris pour une vraie diversité.</p>
+<div class="principles"><span class="principles-title">🔍 Analyse critique :</span><br/>
               Quels biais par défaut ? Pourquoi ? Quelle est ta responsabilité comme utilisateur ?</div>
-            <details class="expand-section">
-              <summary>📖 Exercice critique : Détecter les biais</summary>
-              <div class="expand-content">
-                <p><strong>Protocole :</strong></p>
-                <ol>
-                  <li>Génère les images avec un prompt "neutre" (ex: "portrait d'un adolescent confiant, éclairage cinématique")</li>
-                  <li>Observe : Quelles caractéristiques physiques reviennent par défaut ?</li>
-                  <li>Documente les biais observés (origine, genre, corpulence, validisme...)</li>
-                  <li>Réécris tes prompts pour obtenir une vraie diversité</li>
-                </ol>
-                <div class="warning-box">🤔 <strong>Questions à te poser :</strong>
+<details class="expand-section">
+<summary>📖 Exercice critique : Détecter les biais</summary>
+<div class="expand-content">
+<p><strong>Protocole :</strong></p>
+<ol>
+<li>Génère les images avec un prompt "neutre" (ex: "portrait d'un adolescent confiant, éclairage cinématique")</li>
+<li>Observe : Quelles caractéristiques physiques reviennent par défaut ?</li>
+<li>Documente les biais observés (origine, genre, corpulence, validisme...)</li>
+<li>Réécris tes prompts pour obtenir une vraie diversité</li>
+</ol>
+<div class="warning-box">🤔 <strong>Questions à te poser :</strong>
+<ul>
+<li>Pourquoi l'IA produit-elle ces biais par défaut ?</li>
+<li>Comment les données d'entraînement influencent-elles les résultats ?</li>
+<li>Quelle est ta responsabilité en tant qu'utilisateur ?</li>
+</ul>
+</div>
+</div>
+</details>
+</div>
+<div class="retro-card exercise-card">
+<h4>Direction artistique complète</h4>
+<div class="situation"><strong>Situation :</strong> Tu pitches une idée de série animée à un concours. Tu dois créer une "bible visuelle" : 1 design de personnage, 1 décor principal, 1 scène d'action clé.</div>
+<p class="task">→ Crée un document de direction artistique complet puis tes 3 prompts.</p>
+<div class="principles"><span class="principles-title">🎨 Ton document doit inclure :</span><br/>
+              Palette (5-7 couleurs), style, personnage détaillé, univers, 3 prompts avec composition + lumière<br/>
+<span style="color: var(--retro-orange);">🌍 Réflexion : combien de générations as-tu faites ? Impact écologique ?</span></div>
+<details class="expand-section">
+<summary>📖 Structure d'une direction artistique</summary>
+<div class="expand-content">
+<p><strong>1. Identité visuelle</strong></p>
+<ul>
+<li>Palette de couleurs (5-7 couleurs max avec leurs codes ou descriptions)</li>
+<li>Style artistique de référence</li>
+<li>Ambiance générale (mots-clés)</li>
+</ul>
+<p><strong>2. Personnage principal</strong></p>
+<ul>
+<li>Description physique détaillée et fixe</li>
+<li>Silhouette reconnaissable</li>
+<li>Accessoire ou élément distinctif</li>
+</ul>
+<p><strong>3. Univers</strong></p>
+<ul>
+<li>Époque et lieu</li>
+<li>Éléments récurrents du décor</li>
+<li>Sources de lumière caractéristiques</li>
+</ul>
+<p><strong>4. Tes 3 prompts</strong></p>
+<p>Chacun doit inclure : composition (plan, angle), lumière (direction, qualité, température), et tous les éléments de ton guide de style.</p>
+<div class="warning-box">🌍 <strong>Réflexion écologique :</strong> Combien de générations as-tu faites pour obtenir tes 3 images finales ?
                   <ul>
-                    <li>Pourquoi l'IA produit-elle ces biais par défaut ?</li>
-                    <li>Comment les données d'entraînement influencent-elles les résultats ?</li>
-                    <li>Quelle est ta responsabilité en tant qu'utilisateur ?</li>
-                  </ul>
-                </div>
-              </div>
-            </details>
-          </div>
-
-          <div class="retro-card exercise-card">
-            <h4>Direction artistique complète</h4>
-            <div class="situation"><strong>Situation :</strong> Tu pitches une idée de série animée à un concours. Tu dois créer une "bible visuelle" : 1 design de personnage, 1 décor principal, 1 scène d'action clé.</div>
-            <p class="task">→ Crée un document de direction artistique complet puis tes 3 prompts.</p>
-            <div class="principles"><span class="principles-title">🎨 Ton document doit inclure :</span><br>
-              Palette (5-7 couleurs), style, personnage détaillé, univers, 3 prompts avec composition + lumière<br>
-              <span style="color: var(--retro-orange);">🌍 Réflexion : combien de générations as-tu faites ? Impact écologique ?</span></div>
-            <details class="expand-section">
-              <summary>📖 Structure d'une direction artistique</summary>
-              <div class="expand-content">
-                <p><strong>1. Identité visuelle</strong></p>
-                <ul>
-                  <li>Palette de couleurs (5-7 couleurs max avec leurs codes ou descriptions)</li>
-                  <li>Style artistique de référence</li>
-                  <li>Ambiance générale (mots-clés)</li>
-                </ul>
-                <p><strong>2. Personnage principal</strong></p>
-                <ul>
-                  <li>Description physique détaillée et fixe</li>
-                  <li>Silhouette reconnaissable</li>
-                  <li>Accessoire ou élément distinctif</li>
-                </ul>
-                <p><strong>3. Univers</strong></p>
-                <ul>
-                  <li>Époque et lieu</li>
-                  <li>Éléments récurrents du décor</li>
-                  <li>Sources de lumière caractéristiques</li>
-                </ul>
-                <p><strong>4. Tes 3 prompts</strong></p>
-                <p>Chacun doit inclure : composition (plan, angle), lumière (direction, qualité, température), et tous les éléments de ton guide de style.</p>
-                <div class="warning-box">🌍 <strong>Réflexion écologique :</strong> Combien de générations as-tu faites pour obtenir tes 3 images finales ?
-                  <ul>
-                    <li>Était-ce nécessaire ou aurais-tu pu être plus précis dès le départ ?</li>
-                    <li>Quel est l'impact écologique de ces générations multiples ?</li>
-                    <li>Comment optimiser ton processus créatif ?</li>
-                  </ul>
-                </div>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Final -->
-      <section class="content-section" style="text-align: center; background: rgba(18, 118, 118, 0.05);">
-        <div class="container">
-          <h2>🚀 Besoin d'aide ?</h2>
-          <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+<li>Était-ce nécessaire ou aurais-tu pu être plus précis dès le départ ?</li>
+<li>Quel est l'impact écologique de ces générations multiples ?</li>
+<li>Comment optimiser ton processus créatif ?</li>
+</ul>
+</div>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- CTA Final -->
+<section class="content-section" style="text-align: center; background: rgba(18, 118, 118, 0.05);">
+<div class="container">
+<h2>🚀 Besoin d'aide ?</h2>
+<p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
             Retourne voir les principes ou consulte le kit de survie pour des formules prêtes à l'emploi !
           </p>
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="principes.html" class="retro-btn-pill">
-              <span class="retro-btn-pill-text">Les 10 principes</span>
-              <span class="retro-btn-pill-icon">📚</span>
-            </a>
-            <a href="kit-de-survie.html" class="retro-btn-pill">
-              <span class="retro-btn-pill-text">Kit de survie</span>
-              <span class="retro-btn-pill-icon">🛠️</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer class="main-footer">
-        <p>
-          Formation IA Prompting — Conçue pour les 15-20 ans<br>
-          <a href="index.html">Accueil</a> • <a href="principes.html">Principes</a> • <a href="kit-de-survie.html">Kit de survie</a>
-        </p>
-      </footer>
-    </div>
-  </div>
-
-  <!-- Modal pour les principes -->
-  <div id="principle-modal" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modal-title">Titre du principe</h3>
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body" id="modal-body">
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+<a class="retro-btn-pill" href="principes.html">
+<span class="retro-btn-pill-text">Les 10 principes</span>
+<span class="retro-btn-pill-icon">📚</span>
+</a>
+<a class="retro-btn-pill" href="kit-de-survie.html">
+<span class="retro-btn-pill-text">Kit de survie</span>
+<span class="retro-btn-pill-icon">🛠️</span>
+</a>
+</div>
+</div>
+</section>
+<footer class="main-footer">
+<p>
+          Formation IA Prompting — Conçue pour les 15-20 ans<br/>
+<a href="index.html">Accueil</a> • <a href="principes.html">Principes</a> • <a href="kit-de-survie.html">Kit de survie</a>
+</p>
+</footer>
+<div class="ab-attribution" style="text-align:center;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(128,128,128,0.25);font-size:0.8rem;opacity:0.65;">
+<a href="https://www.linkedin.com/in/antonin-bareau/" rel="noopener" style="font-weight:bold;color:inherit;text-decoration:none;" target="_blank">Antonin Bareau</a>
+   — 
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">Licence CC BY-SA 4.0</a>
+</div></div>
+</div>
+<!-- Modal pour les principes -->
+<div class="modal-overlay" id="principle-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 id="modal-title">Titre du principe</h3>
+<button class="modal-close" onclick="closeModal()">×</button>
+</div>
+<div class="modal-body" id="modal-body">
         Contenu du principe...
       </div>
-    </div>
-  <div class="ab-attribution" style="text-align:center;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(128,128,128,0.25);font-size:0.8rem;opacity:0.65;">
-  <a href="https://www.linkedin.com/in/antonin-bareau/" target="_blank" rel="noopener" style="font-weight:bold;color:inherit;text-decoration:none;">Antonin Bareau</a>
-  &nbsp;&mdash;&nbsp;
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Licence CC BY-SA 4.0</a>
 </div>
 </div>
-
-  <script src="js/main.js"></script>
-  <script>
+<script src="js/main.js"></script>
+<script>
     // Définitions enrichies des principes pour la modale
     const principlesData = {
       exemples: {
@@ -1653,6 +1566,5 @@ E<!DOCTYPE html>
       document.querySelector('.nav-links').classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
